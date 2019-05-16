@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MyDemo_Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="style.css">
+
+<link type="text/css" rel="stylesheet" href="style.css" >
+
+<script type="text/javascript" src="myScript.js"></script>
+
+<!-- ---------------------------------------------Offline Bootstrap CSS and JS  -------------------------------------
+
+
+file:///home/upanand/Desktop/New%20Website/bootstrap-4.0.0-dist/css/bootstrap.min.css
+
+<link href="file:///home/upanand/Desktop/New%20Website/bootstrap-4.0.0-dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+
+file:///home/upanand/Desktop/New%20Website/bootstrap-4.0.0-dist/js/bootstrap.min.js
+
+<script src="file:///home/upanand/Desktop/New%20Website/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+
+
+--------------------------------------------------------------------------------------------------------------  -->
+
+
+<!-- Favicon and Touch Icons -->
+<link href="images/favicon.png" rel="shortcut icon" type="image/png"> 
+
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/evil-icons/x.y.z/evil-icons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/evil-icons/x.y.z/evil-icons.min.js"></script>
+
+<!-- Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/css-plugin-collections.css" rel="stylesheet"/>
+<!-- CSS | menuzord megamenu skins -->
+<link id="menuzord-menu-skins" href="css/menuzord-skins/menuzord-rounded-boxed.css" rel="stylesheet"/>
+<!-- CSS | Main style file -->
+
+<!-- CSS | Preloader Styles -->
+<link href="css/preloader.css" rel="stylesheet" type="text/css">
+<!-- CSS | Custom Margin Padding Collection -->
+<link href="css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+<!-- CSS | Responsive media queries -->
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+
+<!-- external javascripts -->
+<script src="js/jquery-2.2.4.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- JS | jquery plugin collection for this theme -->
+<script src="js/jquery-plugin-collection.js"></script>
+
+<!-- Revolution Slider 5.x SCRIPTS -->
+<script src="js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+<script src="js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+
+
+
+
+<style>
+
+  .navbar-toggle, .icon-bar {
+    border: 1px solid #2E3192;
+}
+
+.navbar-toggle {
+    margin-left: 288px;
+    position: absolute;
+    float: right;
+    padding: 9px 10px;
+    margin-right: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+  .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #2E3192 !important;
+    border: 1px solid #373bae !important;
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 60px !important;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left:90% !important;
+    z-index: 15;
+    width: 60%;
+    padding: 10px;
+  }
+
+  .panel-danger>.panel-heading {
+     z-index: 2;
+    color: #fff !important;
+    background-color: #2E3192 !important;
+    border-color: #373bae !important;
+}
+
+
+.text-danger {
+    color: #00244d !important;
+}
+
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;  
+   background-color: #F58429 !important;
+}
+
+
+.navbar-nav>li>a:hover {
+    color: #434242;
+    background-color: #F58429 !important;
+    line-height: 15px;
+    border: 1px solid #ee6d11;
+}
+
+
+.carousel {
+    position: sticky;
+}
+.list-group-item:first-child {
+    border-top-left-radius:1px;
+    border-top-right-radius:1px;
+}
+
+
+.preview-iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.navbar2 .nav .navbar-nav {
+    font-size: 14px;
+    margin-right: 00px;
+}
+
+</style>
+ </head>
+
+<body>
+
+
+
+
+<!-- Fixed navbar -->
+        <nav id="header" class="navbar navbar-fixed-top">
+
+            <div id="header-container" class="container navbar-container" style="">
+
+                <div class="navbar-header" style="">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+
+              </button>
+              <a class="navbar-brand" href="#"><span class="icon-bar"></span><img class="logo img-responsive brand" src="Img/education.png" style="width:150px;height:70px;margin-top:-30px;margin-left:00px;">
+              </a>
+                   
+               </div>
+           
+
+                <div id="navbar" class="collapse navbar-collapse" >
+                    <ul class="nav navbar-nav">
+                      
+                        
+                        <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">ADMISSION<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+                        <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">ALUMINI<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+                         <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">NEWS & EVENTS<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+
+                <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">ABOUT US<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                  </ul>
+                </li>
+                    </ul>
+
+                </div><!-- /.nav-collapse -->
+
+                  <div class="col-md-4" style="float:right;">                     
+
+                    <div class="col-md-12">       
+                      <div class="row">
+
+                      <div id="navbar1" class="collapse navbar-collapse">
+                          <ul class="nav navbar-nav" style=" font-size: 14px;">
+
+                              
+                              <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">Campus<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Page 1-1</a></li>
+                          <li><a href="#">Page 1-2</a></li>
+                          <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                      </li>
+                              <li class="dropdown show-on-hover"><a class="dropdown-toggle" data-toggle="dropdown" href="#about">Division & Department<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Page 1-1</a></li>
+                          <li><a href="#">Page 1-2</a></li>
+                          <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                      </li>
+                    <li>                        
+                            <span class="header-search ">
+                                    <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+                                    <a href="#link" role="button" class="btn-srch"><i class="fa fa-search"></i></a>
+                                </span>
+                                </li>
+                                </ul>
+
+                          </div>
+                    </div><!-- /.nav-collapse -->
+
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <div class="row">
+                          <div id="navbar2" class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav" style="font-size:14px;margin-right:-100px;">
+                                 <li> 
+                                  <a href="staff.html" class="">Staff</a>
+                              </li>
+                                <li>   
+                                  <a href="students.html" class="">Students</a>
+                              </li>
+                               <li>  
+                                  <a href="alumni.html" class="">Alumni</a>
+                              </li>
+                               <li>  
+                                  <a href="visitors.html" class="">Visitors</a>
+                              </li>
+                               <li>  
+                                  <a href="community.html" class="">Community</a>
+                              </li>
+
+                               </ul>
+                   </div><!-- /.nav-collapse -->
+              </div>
+                    </div>
+                  </div>
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
+<section class="jk-slider" >
+    <div id="carousel-example" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example" data-slide-to="1"></li>
+    <li data-target="#carousel-example" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+    <div class="hero">
+        <hgroup>
+            <h1>High achieving black teens get first taste of Oxford life on spring visit</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book. </p>
+        </hgroup>
+        
+      </div>
+      <div class=""></div>
+     <a href="#"><img src="Img/GAF Weston Vinesh Rajpaul.jpg" class="img-responsive"></a>
+    </div>
+  <div class="item">
+    <div class="hero">
+        <hgroup>
+            <h1>Oxford seeks new Professor of Poetry to succeed Simon Armitage</h1>      
+           
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book. </p>
+        </hgroup>
+        
+      </div>
+      
+       <div class=""></div>
+      <a href="#"><img src="Img/GAF-Street-Ian-Mcgregor.jpg" class="img-responsive"></a>
+      
+    </div>
+    <div class="item">
+        <div class="hero">
+        <hgroup>
+            <h1>Explore postgrad research in the sciences with UNIQ+ this summer</h1>        
+           
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a specimen book.</p>
+        </hgroup>
+        
+      </div>.
+        <div class=""></div>
+      <a href="#"><img src="Img/SteveLangton_StudentConversationsRadSq.png" class="img-responsive"></a>
+      
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+   <span class="glyphicon glyphicon-menu-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example" data-slide="next">
+    <span class="glyphicon glyphicon-menu-right" ></span>
+
+  </a>
+</div>
+    
+</section>
+
+        <div class="" style="margin-top:10px;margin-left: 20px;">
+
+            <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="col-md-8 col-xs-12 col-sm-9">
+                    
+                    <div class="jumbotron" style="padding-top: 00px;">
+
+                      <div class="blog-section paddingTB60 ">
+                        <div class="container">
+                        <div class="row">
+                                      <div class="site-heading">
+                                      <h2>News</h2>
+                                      <div class="border"></div>
+                                      </div>
+                        </div>
+                        <div class="row text-center">
+                               <div class="col-sm-6 col-md-4 ">
+                                <div class="blog-box">
+                                <div class="blog-box-image zoom">
+                                <img src="https://images.pexels.com/photos/6384/woman-hand-desk-office.jpg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="">
+                                 </div>
+                                 <div class="blog-box-content">
+                                  <h4><a target=”_blank” href="#">quis porta tellus dictum</a></h4>
+                                  <p>Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. 
+                                     Sed ornare ligula eget tortor tempor, quis porta tellus dictum.</p>
+                                    <a href="" class="btn btn-default site-btn">Read More</a>
+                                    </div>
+                                    </div>
+                                    </div> <!-- End Col -->                 
+                                  <div class="col-sm-6 col-md-4">
+                                    <div class="blog-box">
+                                      <div class="blog-box-image zoom">
+                                        <img src="https://images.pexels.com/photos/374897/pexels-photo-374897.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="blog-box-content">
+                                         <h4><a target=”_blank” href="#">quis porta tellus dictum</a></h4>
+                                         <p>Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.</p>
+                                         <a href="" class="btn btn-default site-btn">Read More</a>
+                                          </div>
+                                         </div>
+                                      </div> <!-- End Col -->             
+                                      <div class="col-sm-6 col-md-4">
+                                       <div class="blog-box">
+                                         <div class="blog-box-image zoom">
+                                           <img src="https://images.pexels.com/photos/541522/pexels-photo-541522.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="">
+                                           </div>
+                                           <div class="blog-box-content">
+                                               <h4><a target=”_blank” href="#">quis porta tellus dictum</a></h4>
+                                                <p>Phasellus lorem enim, luctus ut velit eget, convallis egestas eros. Sed ornare ligula eget tortor tempor, quis porta tellus dictum.</p>
+                                               <a href="" class="btn btn-default site-btn">Read More</a>
+                                                  </div>
+                                            </div>
+                                          </div> <!-- End Col -->
+                                       </div>
+                                     </div>
+                                 </div>
+
+
+                    </div>
+
+                   <div class="container site-heading">
+                   <h2>WHY MELI</h2>
+                   <div class="border"></div>
+                   </div>
+
+                    <div class="row " id="news_heading" >
+
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Courses</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button">View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Faculty</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button">View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Seminar</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button">View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Vision</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button"> View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Mission</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button">View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+                        <div class="col-xs-6 col-lg-4">
+                            <h3>Stratergy</h3>
+                            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                            <p><a target=”_blank” class="btn btn-default" href="#" role="button">View details »</a></p>
+                        </div><!--/.col-xs-6.col-lg-4-->
+
+
+
+                    </div><!--/row-->
+           </div><!--/.col-xs-12.col-sm-9-->
+
+                <div class="col-md-4 col-xs-12 col-sm-6 sidebar-offcanvas" id="sidebar" >
+
+                      <div class="site-heading">
+                          <h2>Event</h2>
+                            <div class="border"></div>
+                           </div>
+
+         <!-- Container, Row, and Column used for illustration purposes -->
+                                           
+         <!-- Fluid width widget -->        
+           <div class="panel panel-danger">
+          <div class="panel-heading">
+             <h3 class="panel-title">
+                <span class="glyphicon glyphicon-calendar"></span> 
+                      Calendar Events
+               </h3>
+              </div>
+             <div class="panel-body">
+                <ul class="media-list">
+                        <li class="media">
+                         <div class="media-left">
+                          <div class="panel panel-danger text-center date">
+                           <div class="panel-heading month">
+                            <span class="panel-title strong">
+                                Mar
+                             </span>
+                            </div>
+                               <div class="panel-body day text-danger">
+                                 23
+                                 </div>
+                                </div>
+                                </div>
+                                <div class="media-body">
+                               <h4 class="media-heading">
+                                 Pulvinar Mauris Eu
+                                 </h4>
+                                 <p>
+                                  Vivamus pulvinar mauris eu placerat blandit. In euismod tellus vel ex vestibulum congue.
+                                  </p>
+                                 </div>
+                                  </li>
+                                  <li class="media">
+                                     <div class="media-left">
+                                         <div class="panel panel-danger text-center date">
+                                             <div class="panel-heading month">
+                                                 <span class="panel-title strong">
+                                                      Jan
+                                                   </span>
+                                                   </div>
+                                               <div class="panel-body text-danger day">
+                                                        16
+                                                  </div>
+                                               </div>
+                                              </div>
+                                           <div class="media-body">
+                                              <h4 class="media-heading">
+                                                 Aenean Consectetur Ultricies
+                                                </h4>
+                                              <p>Curabitur vel malesuada tortor, sit amet ultricies mauris. Aenean consectetur ultricies luctus.
+                                               </p>
+                                               </div>
+                                   </li>
+                                    <li class="media">
+                                      <div class="media-left">
+                                        <div class="panel panel-danger text-center date">
+                                           <div class="panel-heading month">
+                                             <span class="panel-title strong all-caps">
+                                                   Dec
+                                               </span>
+                                            </div>
+                                        <div class="panel-body text-danger day">
+                                                    8
+                                           </div>
+                                          </div>
+                                          </div>
+                                         <div class="media-body">
+                                           <h4 class="media-heading">
+                                           Praesent Tincidunt
+                                            </h4>
+                                         <p> Sed convallis dignissim magna et dignissim. Praesent tincidunt sapien eu gravida dignissim.
+                                          </p>
+                                           </div>
+                                     </li>
+                                 </ul>
+                                 <a href="#" class="btn btn-default btn-block">More Events »</a>
+                               </div>
+                          </div>
+                 <!-- End fluid width widget -->   
+
+
+
+                    <div class="list-group">
+                        <a target=”_blank” href="#" class="list-group-item active">Strategic plan</a>
+                        <a target=”_blank” href="#" class="list-group-item">Fees and funding</a>
+                        <a target=”_blank” href="#" class="list-group-item">Libraries</a>
+                        <a target=”_blank” href="#" class="list-group-item">Museums and collections</a>
+                        <a target=”_blank” href="#" class="list-group-item">Continuing Education students</a>
+                        <a target=”_blank” href="#" class="list-group-item">Visitors/Tourists</a>
+                        <a target=”_blank” href="#" class="list-group-item">Parliamentarians</a>
+                        <a target=”_blank” href="#" class="list-group-item">Media</a>
+                        <a target=”_blank” href="#" class="list-group-item">Alumni</a>
+                        <a target=”_blank” href="#" class="list-group-item">Contact search</a>
+                    </div>
+                </div><!--/.sidebar-offcanvas-->
+            </div><!--/row-->
+
+            <hr>          
+
+        </div><!--/.container-->
+
+
+<div class="row" style="margin-top:10px;margin-left: 20px;margin-right: 20px;">
+    <div class="col-md-12 col-xs-12 col-sm-9">
+         
+                        <div class="container site-heading">
+                           <h2>Our Courses</h2>
+                          <div class="border1"></div>
+                        </div>
+
+        <div class="" style="">
+            <div id="myCarousel" class="carousel slide" >
+                
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-3"><a href="#x"><img src="Img/Course2-350x265.jpg" alt="Image" class="img-responsive" style="width: 300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="Img/courses3-350x265.jpg" alt="Image" class="img-responsive" style="width: 300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="Img/disc_teddyhall.jpg" alt="Image" class="img-responsive" style="width: 300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x"><img src="Img/courses1-350x265.jpg" alt="Image" class="img-responsive" style="width: 300px;height:300px;"></a>
+                            </div>
+
+                           
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/courses3-350x265.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/disc_teddyhall.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/courses1-350x265.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/Course2-350x265.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                                   
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row ">
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/disc_teddyhall.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/courses1-350x265.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/Course2-350x265.jpg" alt="Image" class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>
+                            <div class="col-sm-3"><a href="#x" class="thumbnail"><img src="Img/courses3-350x265.jpg" alt="Image"class="img-responsive" style="width:300px;height:300px;"></a>
+                            </div>                           
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> 
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+            </div>
+            <!--/myCarousel-->
+        </div>
+        <!--/well-->
+    </div>
+</div>
+             
+<section style="z-index: 999999">
+            <div class="container site-heading">
+                   <h2>Our Teachers</h2>
+                    <div class="border1"></div>
+             </div>
+
+  <div class="container" style="background-color: #2E3192;z-index: 999999">
+
+  <div class="row" style="margin-top:30px;z-index: 999999">
+  
+  <!--team-1-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/teacher3-350x350.jpg" class="img-fluid" />
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  11111 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-1-->
+  
+  <!--team-2-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/teacher2-350x350.jpg" class="img-fluid" />
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  22222 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-2-->
+  
+  <!--team-3-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/staff_3-350x350.jpg" class="img-fluid" />
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  33333 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-3-->
+  
+  <!--team-4-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/mange_3-350x350.jpg" class="img-fluid" />
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  44444 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-4-->
+  
+  <!--team-5-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/teacher4-350x350.jpg" class="img-fluid" />
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  55555 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-5-->
+  
+  <!--team-6-->
+  <div class="col-lg-4">
+  <div class="our-team-main">
+  
+  <div class="team-front">
+  <img src="Img/mange_2-350x350.jpg" class="img-fluid"/>
+  <h3>Upanand K.</h3>
+  <p>Web Designer</p>
+  </div>
+  
+  <div class="team-back">
+  <span>
+  66666 -----  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque penatibus et magnis dis parturient montes,
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+  natoque.
+  </span>
+  </div>
+  
+  </div>
+  </div>
+  <!--team-6-->
+  
+  </div>
+  </div>
+
+</section>
+
+<!-- 
+
+<section>
+  <div class="container gal-container">
+
+                                                                       <div class="site-heading">
+                                                                            <h2>Our Gallery</h2>
+                                                                            <div class="border"></div>
+                                                                        </div>
+
+
+    <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#1">
+          <img src="Img/muslim-institute-w.png">
+        </a>
+        <div class="modal fade" id="1" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/1.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the first one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#2">
+          <img src="Img/muslim-school-370x247.jpg">
+        </a>
+        <div class="modal fade" id="2" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/2.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the second one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#3">
+         <img src="Img/muslim-school-7-370x247.jpg"> 
+        </a>
+        <div class="modal fade" id="3" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/3.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the third one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#4">
+          <img src="Img/muslim-school-4-370x247.jpg">
+        </a>
+        <div class="modal fade" id="4" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/4.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the fourth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#5">
+           <img src="Img/muslim-school-9-370x247.jpg">
+        </a>
+        <div class="modal fade" id="5" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/5.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the fifth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#6">
+          <img src="Img/muslim-school-3-370x247.jpg">
+          
+        </a>
+        <div class="modal fade" id="6" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/6.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the sixth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#7">
+          <img src="Img/muslim-school-8-370x247.jpg">
+        </a>
+        <div class="modal fade" id="7" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/7.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the seventh one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#8">
+          <img src="Img/muslim-school-6-370x247.jpg">
+         
+        </a>
+        <div class="modal fade" id="8" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/8.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the eighth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#9">
+          <img src="Img/muslim-school-10-370x247.jpg">
+        </a>
+        <div class="modal fade" id="9" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/9.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the ninth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
+      <div class="box">
+        <a href="#" data-toggle="modal" data-target="#10">
+          <img src="Img/muslim-institute-w.png">
+        </a>
+        <div class="modal fade" id="10" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <div class="modal-body">
+                <img src="http://nabeel.co.in/files/bootsnipp/gallery/10.jpg">
+              </div>
+                <div class="col-md-12 description">
+                  <h4>This is the tenth one on my Gallery</h4>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+          <div class="scroll-to-top" style="display: block;">
+    <span class="scroll-icon">
+      <i class="fa fa-rocket" aria-hidden="true"></i>
+    </span>
+  </div>                    -->
+
+
+<section id="carousel">             
+  <div class="container">
+
+
+                  <div class="site-heading">
+                   <h2>Our Testimonials</h2>
+                   <div class="border1"></div>
+                  </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+                <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+          <!-- Carousel indicators -->
+                  <ol class="carousel-indicators">
+            <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
+                    <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+                    <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
+                    <li data-target="#fade-quote-carousel" data-slide-to="5"></li>
+          </ol>
+          <!-- Carousel items -->
+          
+          <div class="carousel-inner">
+            <div class="item">
+                        <div class="profile-circle" style="background-image: url(Img/images1111.jpeg);background-repeat: no-repeat; background-size: 100px 100px;">
+                          <img scr="Img/Authors1.png">
+                        </div>
+              <blockquote>
+                <p>11- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote> 
+            </div>
+            <div class="item">
+                        <div class="profile-circle" style="background-image: url(Img/Authors1.png);background-repeat: no-repeat; background-size: 100px 100px;"></div>
+              <blockquote>
+                <p>22- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class="active item">
+                        <div class="profile-circle" style="background-image: url(Img/images1111.jpeg);background-repeat: no-repeat; background-size: 100px 100px;"></div>
+              <blockquote>
+                <p>33- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-image: url(Img/Authors1.png);background-repeat: no-repeat; background-size: 100px 100px;"></div>
+                <blockquote>
+                <p>44- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-image: url(Img/images1111.jpeg);background-repeat: no-repeat; background-size: 100px 100px;"></div>
+                <blockquote>
+                <p>55- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+                    <div class="item">
+                        <div class="profile-circle" style="background-image: url(Img/Authors1.png);background-repeat: no-repeat; background-size: 100px 100px;"></div>
+                <blockquote>
+                <p>66- -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>              
+    </div>
+  </div>
+</section>
+
+<section id="testimonial">
+  <div class="container">
+
+                     <div class="site-heading">
+                         <h2>Our Brands</h2>
+                           <div class="border"></div>
+                       </div>
+
+   
+ <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000" style="background-color: #fff;margin-left: 20px;"> 
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"><img src="Img/1muslim-300x79.jpg" alt="" ></li>
+        <li data-target="#fade-quote-carousel" data-slide-to="1"><img src="Img/2muslim-300x79.jpg" alt="" ></li>
+        <li data-target="#fade-quote-carousel" data-slide-to="2" ><img src="Img/3printing-300x104.jpg" alt="" ></li>
+        <li data-target="#fade-quote-carousel" data-slide-to="3"><img src="Img/4magazine-300x104.jpg" alt="" ></li>
+        <li data-target="#fade-quote-carousel" data-slide-to="4"><img src="Img/5it-logo-300x99.jpg" alt="" ></li>
+        
+      </ol>
+      <!-- Carousel items -->
+      <div class="caro_bg ">
+        <div class="container">
+          <div class="carousel-inner">
+            <div class="item active">
+              <blockquote>
+                <p>11111 -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>22222 -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class=" item">
+              <blockquote>
+                <p>33333 -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>44444 -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>55555 -----  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+</section>
+
+
+<!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row text-xs-center text-sm-left text-md-left" style=" margin-top: 20px;">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Information About</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Strategic plan</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Fees and funding</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Museums and collections</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Data privacy / GDPR</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Libraries</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Information For</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Visitors/Tourists</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Media</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Alumni</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Parliamentarians</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Businesses/Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <h5>Quick links</h5>
+                    <ul class="list-unstyled quick-links">
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Contact search</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Term dates</a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Online/distance learning </a></li>
+                        <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Continuing Education students</a></li>
+                        <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Jobs and vacancies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>  
+            <div class="row">
+               
+                </div>
+                </hr>
+            </div>  
+        </div>
+
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white" style="font-size:15px;background-color: #252423;">                  
+                   
+  
+                    <p class="h6"><a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">&copy All right Reversed. Sunlimetech</a>
+
+                        <a href="//www.ox.ac.uk/contact-us">Contact us</a>
+                         <a href="//www.ox.ac.uk/about-this-site">About this site</a>
+                         <a href="//www.ox.ac.uk/legal">Legal</a>
+                         <a href="//www.ox.ac.uk/privacy-policy">Privacy policy</a>
+                         <a href="//www.ox.ac.uk/content/cookie-statement">Cookie statement</a>
+
+                    </p>
+
+                </div>
+
+    </section>
+    <!-- ./Footer -->
+
+ </body>
