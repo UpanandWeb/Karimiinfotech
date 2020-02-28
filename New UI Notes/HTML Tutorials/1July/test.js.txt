@@ -1,0 +1,16 @@
+var data = {
+	a: 90,
+	b:100,
+	total: 0,
+	getSum: function(){
+		data.total = data.a + data.b;
+	}
+}
+
+function getSum() {
+	
+}
+
+function dispalyData() {
+	console.log("the sum is " + data.total);
+}

@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>
+			Demonstrating inheritance btwn Static objects....
+		</title>
+	</head>
+	<body>
+		<div id="container"></div>
+		<div>
+			Demonstrating Inheritance.
+		</div>
+		<script type="text/javascript">
+			var sellerData = {
+				sellerName: 'Indian Electronics',
+				sellerLocation: 'New Delhi',
+				sellerRating: '4.5/5',
+				displaySellerDetials: function() {
+					console.log("Seller Details");
+					console.log("Seller Name " + this.sellerName)
+					console.log("Seller Location " + this.sellerLocation)
+				}
+			}
+			var product1 = {
+				name: "Laptop",
+				price: '$3000',
+				manufacturer: 'Samsung',
+				productRating: '4/5',
+				
+				displayProductDetails: function() {
+					console.log("Product Details");
+					
+
+					console.log("Product price" + this.price);
+					console.log("Product Rating" + this.productRating);
+					console.log("Product Manufacturer" + this.manufacturer);
+					console.log("Seller Rating " + this.sellerRating)
+				},
+				addContentToPage: function() {
+					var ulTag = document.createElement("ul");
+					for (var temp in this) {
+						if (typeof(this[temp]) == 'function') {
+							continue;
+						}
+						var liTag = document.createElement("li");
+						liTag.innerText = temp + ' is ' + this[temp]
+						ulTag.appendChild(liTag);
+					}
+					document.querySelector("#container").appendChild(ulTag);
+				}
+			}
+			product1.__proto__ = sellerData;
+			console.log(product1);
+			product1.displayProductDetails();
+			product1.displaySellerDetials();
+			product1.addContentToPage();
+			var product2 = {
+				name: "Mobile",
+				price: '$2000',
+				manufacturer: 'HTC',
+				productRating: '3/5',
+				
+				displayProductDetails: function() {
+					console.log("Product Details");
+					console.log("Product Name" + this.name);
+					console.log("Product price" + this.price);
+					console.log("Product Rating" + this.productRating);
+					console.log("Product Manufacturer" + this.manufacturer);
+					console.log("Seller Rating " + this.sellerRating)
+				}
+			}
+			product2.__proto__ = sellerData;
+			product2.displayProductDetails();
+			product2.displaySellerDetials()
+		</script>
+	</body>
+</html>

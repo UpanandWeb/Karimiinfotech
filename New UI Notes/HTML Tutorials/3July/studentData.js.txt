@@ -1,0 +1,42 @@
+var schoolData = {
+	schoolName: "ABC School",
+	sLocation: "Hyderabad",
+	showSchlData: function() {
+		console.log("school data");
+	}
+}
+
+function registerStudentDetails() {
+	var stdObj = Object.create(schoolData);
+	var stdObj = {};
+	// stdObj.__proto__ = schoolData;
+	stdObj.name = document.querySelector("#sname").value;
+	stdObj.age = document.querySelector("#sage").value;
+	stdObj.uclass = document.querySelector("#uclass").value;
+	stdObj.showDetails = function() {
+		var ulTag = document.createElement("ul");
+		var liTag = document.createElement("li");
+		liTag.innerHTML = '<b> Student Name :</b> ' + this.name;
+		ulTag.appendChild(liTag);
+
+		var liTag2 = document.createElement("li");
+		liTag2.innerHTML = '<b> Student Age :</b> ' + this.age;
+		ulTag.appendChild(liTag2);
+
+		var liTag3 = document.createElement("li");
+		liTag3.innerHTML = '<b> Class :</b> ' + this.uclass;
+		ulTag.appendChild(liTag3);
+
+		var liTag4 = document.createElement("li");
+		liTag4.innerHTML = '<b> School Name :</b> ' + this.schoolName;
+		ulTag.appendChild(liTag4);
+
+		var liTag5 = document.createElement("li");
+		liTag5.innerHTML = '<b> Location :</b> ' + this.sLocation;
+		ulTag.appendChild(liTag5);
+
+		document.querySelector("#container").appendChild(ulTag);
+	}
+	stdObj.showDetails();
+}
+

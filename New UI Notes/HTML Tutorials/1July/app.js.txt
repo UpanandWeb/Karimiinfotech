@@ -1,0 +1,37 @@
+var stdData = {};
+function readStudentData() {
+	stdData.name = document.querySelector("#sname").value;
+	stdData.age = document.querySelector("#sage").value;
+	stdData.marks = [];
+	for (var i = 1; i <=5; i++) {
+		var id = '#marks' + i;
+		var value = document.querySelector(id).value;
+		value = parseInt(value);
+		stdData.marks.push(value);
+	}
+	stdData.getTotalAndAvg = function(){
+		this.total = 0;
+		for (var i = 0; i < stdData.marks.length; i++) {
+			this.total += this.marks[i];
+		}
+		this.avg = stdData.total / stdData.marks.length;
+	};
+	stdData.getGrade = function(){
+		if (stdData.avg >= 60) {
+			this.garde = "FIRST CLASS";
+		} else {
+			this.garde = "SECOND CLASS";
+		}
+	};
+	stdData.displayData = function() {
+		stdData.getTotalAndAvg();
+		this.getGrade();
+		console.log("STudetn Details");
+		console.log("Student name is " + this.name)
+		console.log("Student age is " + stdData.age)
+		console.log("Student total is " + this.total)
+		console.log("Student avg is " + stdData.avg)
+		console.log("Student Grade is " + this.garde)
+	}
+	stdData.displayData();
+}
