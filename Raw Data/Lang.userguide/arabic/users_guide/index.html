@@ -1,0 +1,296 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar-AE" lang="ar-AE"><head xmlns=""><title>دليل المستخدم على الإنترنت </title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><meta http-equiv="Content-Style-Type" content="text/css"></meta><meta http-equiv="Content-Script-Type" content="text/javascript"></meta><meta name="author" content="Brother Industries, Ltd."></meta><link href="common/css/fontset.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/ubase.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/ubase_rtl.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/basic.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/basic_rtl.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/customization.css" rel="stylesheet" type="text/css" media="all"></link><link href="common/css/outputclass.css" rel="stylesheet" type="text/css" media="all"></link><style type="text/css">.highlight {background-color:yellow;}</style><script type="text/javascript" src="common/js/jquery-1.6.2.min.js">/* */</script><script type="text/javascript" src="common/js/jquery.treeview.js">/* */</script><script type="text/javascript" src="common/js/jquery.hashchange.js">/* */</script><script type="text/javascript" src="common/js/jquery.highlight-3.js">/* */</script><script type="text/javascript" src="common/js/functions.js">/* */</script><script type="text/javascript" src="common/js/indexer.js">/* */</script><script type="text/javascript" src="common/js/search.js">/* */</script><link href="common/js/jquery.treeview_rtl.css" rel="stylesheet" type="text/css" media="all"></link><script type="text/javascript"><!--
+				var fg=0;
+				var hashChangeFlag = '';
+				
+				var browserName = browserCheck();
+				
+				function resultClick(fileName, key) {
+					
+					
+					
+					location.hash = fileName + '#KEY='+ key;
+				}
+				
+				function spanClick(hash){
+					
+					var hashDecode = decodeURIComponent(hash);
+					var hashArray = hashDecode.split('#');
+					var fileName = hashArray[0];
+					var anchorName = hashArray[1];
+					
+					var myHashDecode = decodeURIComponent(location.hash.substring(1));
+					var myHashArray = myHashDecode.split('#');
+					var myFileName = myHashArray[0];
+					
+					if ((fileName == undefined || fileName == '') && (anchorName != undefined && anchorName != '')) {
+						var targetNode = $('#' + anchorName);
+						var off = targetNode.offset();
+						window.scroll(0, off.top);
+					}
+					
+					else if (myFileName == fileName) {
+						
+						if (anchorName != undefined || anchorName != '') {
+							var targetNode = $('#' + anchorName);
+							var off = targetNode.offset();
+							window.scroll(0, off.top);
+						}
+						
+						else {
+							window.scroll(0, 0);
+						}
+					}
+					
+					else {
+						
+						if (anchorName != '' && anchorName != undefined) {
+							location.hash = encodeURIComponent(fileName + '#'+ anchorName);
+						}
+						
+						else {
+							location.hash = encodeURIComponent(fileName);
+						}
+					}
+				}
+				
+				$(document).ready(function(){
+					
+
+					$(".open").find("li").css("background","url('images/menu_bg_normal_arrow_rtl.gif') no-repeat 245px 0.5em");
+					
+					
+					
+
+					$(".open").next().hide();
+					$(".sideTreeView").treeview({ collapsed : true, animated : "fast" });
+					
+					$(window).hashchange(function(){
+						subHtmlload();
+					});
+					
+					$(window).hashchange();
+					
+					$(".open").click(function(){
+						if($(this).next().css("display")=="none"){
+
+							$(this).find("li").css("background","url('images/menu_bg_down_arrow.gif') no-repeat 245px 0.5em");
+
+
+							$(this).css("background-color","#ffffff");
+							//$("span.click").css("background-color","#ffffff");
+						}else{
+						
+
+							$(".open").find("li").css("background","url('images/menu_bg_normal_arrow_rtl.gif') no-repeat 245px 0.5em");
+
+							$("div.parent span").css("background","none");
+						}
+						$(this).next().slideToggle('fast');
+					});
+					
+					$(".click").click(function(){
+						
+						var thisId = $(this).attr("class");
+						var classFileName = thisId.substring(0, thisId.indexOf(' '));
+						
+						if (location.hash != classFileName) {
+							hashChangeFlag = "true";
+						}
+						location.hash = classFileName;
+					});
+					
+					if (browserName == 'IE6') {
+						$(".parent").hover(
+							function(){
+								$(this).css('color','#ff6c35');
+							},
+							function() {
+								$(this).css('color','#FFFFFF');
+							}
+						);
+						$("span.click").hover(
+							function(){
+								$(this).css('color','#ff6c35');
+							},
+							function() {
+								$(this).css('color','#000000');
+							}
+						);
+						$(".searchAreaClick").hover(
+							function(){
+								$(this).css('color','#ff6c35');
+							},
+							function() {
+								$(this).css('color','#011a7f');
+							}
+						);
+					}
+					
+					$("#searchTextArea").keydown(function (event) {
+						if (event.keyCode == 13) {
+							var searchStr = $("#searchTextArea").val();
+							if (searchStr == '') {
+								
+								alert("لم يتم ادخال اية كلمة")
+							}
+							else {
+								
+								var date = new Date();
+								var searchDate = String(date.getYear()) + String(date.getMonth()) + String(date.getDate()) + String(date.getHours()) + String(date.getMinutes()) + String(date.getSeconds());
+								searchStr = searchStr + "&" + searchDate;
+								searchStr = encodeURIComponent(searchStr);
+								var tmpHash = 'search_result';
+								location.hash =  tmpHash + '#KEY=' + searchStr;
+							}
+						}
+					});
+					
+					$(".searchClick").click(function(){
+						var searchStr = $("#searchTextArea").val();
+						if (searchStr == '') {
+							
+							alert("لم يتم ادخال اية كلمة")
+						}
+						else {
+							
+							var date = new Date();
+							var searchDate = String(date.getYear()) + String(date.getMonth()) + String(date.getDate()) + String(date.getHours()) + String(date.getMinutes()) + String(date.getSeconds());
+							searchStr = searchStr + "&" + searchDate;
+							searchStr = encodeURIComponent(searchStr);
+							var tmpHash = 'search_result';
+							location.hash =  tmpHash + '#KEY=' + searchStr;
+						}
+					});
+				});
+				
+				function subHtmlload(){
+					var myHash;
+					var fileName;
+					var hashArray = new Array;
+					if (location.hash == '' || location.hash == undefined || location.hash == '#') {
+						
+						
+						fileName = 'index_body'
+					}
+					else {
+						myHash = decodeURIComponent(location.hash)
+						hashArray = myHash.split('#');
+						fileName = hashArray[1];
+					}
+					
+					fileName = fileName.replace(' ', '%20');
+					
+					if (fileName == 'index_body') {
+						$("#mainContents").load("html/" + fileName + ".html", function(){
+							
+							$("#mainContents").removeHighlight();
+							
+							hashChangeFlag = "";
+							
+							
+							if (browserName == 'IE9' || browserName == 'IE10') {
+								location.hash = location.hash;
+							}
+						});
+					}
+					
+					else if (fileName == 'search_result') {
+						$("#mainContents").load("html/" + fileName + ".html", function(){
+							
+							$("#mainContents").removeHighlight();
+							
+							var keyName = hashArray[2];
+							keyName = keyName.substring(keyName.indexOf('=') + 1);
+							
+							var keyValue = keyName.substring(0, keyName.lastIndexOf("&"));
+							var resultHtml = searchResult(keyValue);
+							$(".resultBlock").replaceWith(resultHtml);
+							window.scroll(0, 0);
+							
+							hashChangeFlag = "";
+							
+							if (browserName == 'IE9' || browserName == 'IE10') {
+								location.hash = location.hash;
+							}
+						});
+					}
+					
+					else {
+						$("#mainContents").load("html/"+ fileName + ".html", function(){
+							
+							$("#mainContents").removeHighlight();
+							var secondHash = hashArray[2];
+							
+							if (secondHash == undefined || secondHash == '') {
+								window.scroll(0, 0);
+							}
+							
+							else {
+								var secondHashIndex = secondHash.indexOf("=");
+								
+								if (secondHashIndex == -1) {
+									var targetNode = $('#' + secondHash);
+									var off = targetNode.offset();
+									window.scroll(0, off.top);
+								}
+								
+								
+								else {
+									var keyValue = secondHash.substring(secondHash.indexOf('=') + 1);
+									$("#mainContents").highlight(keyValue);
+									var highlightNode = $(".highlight");
+									var off = highlightNode.offset();
+									window.scroll(0, off.top); 
+								}
+							}
+							treeviewControl(fileName);
+							
+							
+							
+							if (browserName == 'IE9' || browserName == 'IE10') {
+								location.hash = location.hash;
+							}
+						});
+					}
+				}
+				
+				function treeviewControl(fileName) {
+					var escapeFileName = jquerySelecterEscape(fileName);
+					
+					$(".treeList span").css("background-color","#ffffff");
+					
+					$(".treeList ." + escapeFileName).css("background-color","#f5d1d1");
+					
+					$(".treeList ." + escapeFileName).find("span").css("background-color","#f5d1d1");
+					
+					if ($("."+ escapeFileName).parents("ul").length == 0) {
+					}
+					
+					else {
+						
+						$("."+ escapeFileName).parents("ul").css("display", "block");
+						
+
+
+						$("."+ escapeFileName).parents(".treeview").prev().find("li").css("background","url('images/menu_bg_down_arrow.gif') no-repeat 245px 0.5em");
+						
+
+						$(".treeList ." + escapeFileName).next('ul').css("display","block");
+						
+						if (hashChangeFlag != 'true') {
+							
+							$("."+ escapeFileName).parents(".existSub").removeClass("expandable");
+							$("."+ escapeFileName).parents(".existSub").addClass("collapsable");
+							$("."+ escapeFileName).parents(".existSub").children("div").removeClass("expandable-hitarea");
+							$("."+ escapeFileName).parents(".existSub").children("div").addClass("collapsable-hitarea");
+						}
+					}
+					
+					hashChangeFlag = '';
+				}
+			--></script><script type="text/javascript"><!--
+							var outputFormat = "HTML";
+						--></script><!--[if IE 8]><link href="common/css/ie8.css" rel="stylesheet" type="text/css" media="all"></link><![endif]--><!--[if IE 9]><link href="common/css/ie9.css" rel="stylesheet" type="text/css" media="all"></link><![endif]--></head><body class="ar-AE"><div id="body"><div id="header"><h1><img src="images/logo.gif" alt="brother at your side" /></h1></div><div class="clearfix" id="mainWrap"><div xmlns="" id="sidemenu"><div id="head"><h2 id="GUID-4EB53F58-C2FB-42AD-8145-F13B2552B17F"><span class="ph" id="GUID-FC22A1D0-7FEB-4149-B2C0-E1E8E4506555">دليل المستخدم على الإنترنت</span> </h2><p class="transRelModel">DCP‑L2520D / DCP‑L2540DW / DCP‑L2541DW / HL‑L2380DW / MFC‑L2700D / MFC‑L2701D / MFC‑L2700DW / MFC‑L2701DW / MFC‑L2740DW</p></div><div id="menuGroup"><div class="index_body click parent noOpen"><p><a>الصفحة الرئيسية</a></p></div><div class="GUID-7CAE4D83-8FD9-4718-B371-F72C9D0DC9EE_1 click leftPaneMenuTop parent open"><ul><li>قبل استخدام جهاز Brother الذي بحوزتك</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList noSub"><span class="GUID-5DD2D923-0C3F-40B1-BCFC-02481FFD0D7F_2 click">المستعرضات الموصى بها</span></li><li class="treeList noSub"><span class="GUID-6475DB37-2775-4B4F-9A94-89A9A869640D_3 click">تعريف الملاحظات</span></li><li class="treeList noSub"><span class="GUID-525BE20C-E5FD-42AC-A436-75F017C265F1_4 click">ملاحظة مهمة</span></li></ul><div class="GUID-6CAFA7C5-219D-4A29-96FE-F448B23EF1C0_5 click leftPaneMenuTop parent open"><ul><li>مقدمة حول جهاز Brother الخاص بك</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList existSub"><span class="GUID-43CCDE89-B379-4D40-9E27-A6E909365D53_6 click">لطرز LCD ذات سعة سطران</span><ul><li class="treeList noSub"><span class="GUID-042B7C53-C831-4AAC-98C4-D90C187C2B38_7 click">نظرة عامة على لوحة التحكم</span></li></ul></li><li class="treeList existSub"><span class="GUID-91AB53F5-3837-47ED-AD61-41FD6BBE7327_8 click">لطرز شاشة اللمس</span><ul><li class="treeList noSub"><span class="GUID-80428D78-CC5A-48C5-83F4-F4BCE9F6F641_9 click">نظرة عامة على لوحة التحكم</span></li><li class="treeList noSub"><span class="GUID-3DAD29E3-DF24-4518-AEEF-FCB00950C9A0_10 click">نظرة عامة على شاشة LCD اللمسية</span></li><li class="treeList noSub"><span class="GUID-EE8D07AC-010E-4268-87D2-8D27CD63FBB5_11 click">كيفية التنقل خلال شاشة اللمس LCD</span></li><li class="treeList noSub"><span class="GUID-A4E91692-A27E-4A8F-8516-69A36170A0F0_12 click">نظرة عامة على شاشة الإعدادات</span></li></ul></li><li class="treeList noSub"><span class="GUID-9BE7B99C-AE3D-4903-9EBB-A83852C80F90_13 click">الوصول إلى أدوات Brother المساعدة ‏(Windows<span class="sup" id="GUID-619B41F8-1005-4178-AB0A-74DDAF9CE707">‎®‎</span>)‏</span></li></ul><div class="GUID-C0505F8A-A2DA-49BA-B4BB-695209027A02_14 click leftPaneMenuTop parent open"><ul><li>التعامل مع الورق</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList existSub"><span class="GUID-ECE2D4CC-027E-4367-95FC-FA61111DC328_15 click">تحميل الورق</span><ul><li class="treeList noSub"><span class="GUID-EB1DD292-8BEA-4A9D-AACB-34C1DB2CA92B_16 click">التحميل والطباعة باستخدام درج الورق</span></li><li class="treeList existSub"><span class="GUID-79225A23-F467-4885-8E3E-BB020AB5C5BE_17 click">تحميل الورق وطباعته في فتحة التغذية اليدوية</span><ul><li class="treeList noSub"><span class="GUID-F11C220B-387C-48D8-91D8-24862AE0FE52_18 click">تحميل وطباعة الورق العادي والورق قليل السُمك والورق المعاد تدويره والورق المقوى في فتحة التغذية اليدوية</span></li><li class="treeList noSub"><span class="GUID-BA7C08DB-3E75-47F0-9057-666A9A87C231_19 click">تحميل ورق سميك وملصقات في فتحة التغذية اليدوية والطباعة عليها</span></li><li class="treeList noSub"><span class="GUID-100F70B1-8037-4511-B46C-70ADDE4E1642_20 click">تحميل المظاريف والطباعة عليها في فتحة التغذية اليدوية</span></li></ul></li></ul></li><li class="treeList existSub"><span class="GUID-F874C8A1-DA13-4F83-A6BB-11849A8047F8_21 click">إعدادات الورق</span><ul><li class="treeList noSub"><span class="GUID-1C1C6970-A33C-443A-949C-B91496CF155A_22 click">تغيير حجم الورق</span></li><li class="treeList noSub"><span class="GUID-90B3854D-E0AD-4900-ADBA-1462194DC6B7_23 click">تغيير نوع الورق</span></li><li class="treeList noSub"><span class="GUID-072CFB2C-E994-4E85-85AE-DEC6DE16E140_24 click">تعيين فحص الحجم</span></li></ul></li><li class="treeList noSub"><span class="GUID-904143DE-6F48-47B6-BA9A-182AB92F2194_25 click">المناطق غير القابلة للمسح الضوئي وغير القابلة للطباعة</span></li><li class="treeList noSub"><span class="GUID-3501905E-9A00-4F4E-8BC3-07D9CA774DE2_26 click">استخدام الورق الخاص</span></li><li class="treeList existSub"><span class="GUID-00A11555-461C-45DB-8530-99D2B087C948_27 click">تحميل المستندات</span><ul><li class="treeList noSub"><span class="GUID-23283B84-E92E-4782-B32E-5E7328CFEBF6_28 click">تحميل المستندات في وحدة تغذية المستندات التلقائية ‏(ADF)‏</span></li><li class="treeList noSub"><span class="GUID-A8CD1E0D-FF8A-460E-8802-048A8192B422_29 click">تحميل المستندات على زجاج الماسح الضوئي</span></li></ul></li></ul><div class="GUID-595FAF5A-B3C0-445F-B492-F15DFC141B5E_30 click leftPaneMenuTop parent open"><ul><li>استكشاف الأخطاء وإصلاحها</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList noSub"><span class="GUID-E5CFCE86-CFAC-47B3-BD82-BC2D7D48E759_31 click">مشاكل الطباعة</span></li><li class="treeList existSub"><span class="GUID-C9E0FC2E-86E0-46E5-B468-7F11562ACDB8_32 click">مشاكل الهاتف والفاكس</span><ul><li class="treeList noSub"><span class="GUID-11225954-6F7C-4DDF-BE71-201B7D226841_33 click">تعيين اكتشاف نغمة الاتصال</span></li><li class="treeList noSub"><span class="GUID-A831EA30-8FA3-40AF-A776-E4498325D380_34 click"> تعيين توافق خط الهاتف للواجهة وأنظمة نقل الصوت عبر بروتوكول الإنترنت ‏(VoIP)‏</span></li></ul></li><li class="treeList existSub"><span class="GUID-726E8E32-93A5-4083-B28E-2F3FC481E4FE_35 click">مشكلات الشبكة</span><ul><li class="treeList noSub"><span class="GUID-E83BCE46-7115-4DAC-8B5B-8B5664F3167E_36 click">رسائل الخطأ لـ DCP-L2540DWDCP-L2541DWMFC-L2700DWMFC-L2701DW</span></li><li class="treeList noSub"><span class="GUID-EBF765D1-BA0C-4920-8445-9596F6D96ACC_37 click">رسائل الخطأ لـ HL-L2380DWMFC-L2740DW</span></li><li class="treeList noSub"><span class="GUID-28C35A4A-6790-4CBC-92A3-48866EBA9CD6_38 click">أين يمكنني العثور على إعدادات الشبكة الخاصة بجهاز Brother الذي بحوزتي؟</span></li><li class="treeList existSub"><span class="GUID-B9F2F988-0ABA-40F7-B133-A84BB8A9C748_39 click">لا يمكنني إكمال تهيئة إعداد الشبكة اللاسلكية.</span><ul><li class="treeList noSub"><span class="GUID-845FEA95-04C4-4D0A-A153-978583E1F674_40 click">استخدام أداة إصلاح الاتصال بالشبكة ‏(نظام التشغيل Windows<span class="sup" id="d1873e1711">‎®‎</span>)‏</span></li></ul></li><li class="treeList noSub"><span class="GUID-97B082F2-506F-4780-AE96-CC6C8CCE59AE_41 click">جهاز Brother الخاص بي غير موجود على الشبكة خلال تثبيت برنامج MFL-Pro Suite.</span></li><li class="treeList noSub"><span class="GUID-9BE6EB6D-E57E-4E81-A2E4-2E4205064410_42 click">جهاز Brother الخاص بي لا يمكنه الطباعة أو المسح الضوئي أو استلام فاكس عن طريق الكمبيوتر عبر الشبكة.</span></li><li class="treeList noSub"><span class="GUID-C3FA79E2-5E89-4956-A2A3-92F34AD2615C_43 click">لم يتم العثور على جهاز Brother الخاص بي على الشبكة حتى بعد تثبيته بنجاح.</span></li><li class="treeList noSub"><span class="GUID-70260104-7E2E-4E36-955C-54E6885839C6_44 click">إعدادات الأمان الخاصة بي لا تعمل على نحو صحيح.</span></li><li class="treeList noSub"><span class="GUID-83F6DFFF-20C5-4CC7-B411-DDC181A3F678_45 click">أريد التحقق من عمل أجهزة الشبكة الخاصة بي بشكل صحيح.</span></li></ul></li><li class="treeList noSub"><span class="GUID-7A0D7CF8-FE10-4366-AA5F-3C12864AC898_46 click">مشاكل أخرى</span></li><li class="treeList noSub"><span class="GUID-8FFDB66A-4F2F-4590-95E9-4ABFBD051B2E_47 click">رسائل الخطأ والصيانة ‏(لطرز LCD ثنائية الخطوط)‏</span></li><li class="treeList noSub"><span class="GUID-E8026A42-E501-4851-8662-8CB417AFD6C8_48 click">رسائل الخطأ والصيانة ‏(لطرز شاشة اللمس)‏</span></li><li class="treeList existSub"><span class="GUID-E314DFC7-5D84-43E8-B89D-061176B4AC62_49 click">نقل الفاكسات الخاصة بك أو تقرير يومية الفاكس</span><ul><li class="treeList noSub"><span class="GUID-1BF57A71-0DA9-4965-B4FA-DFFC72597FF7_50 click">نقل الفاكسات إلى جهاز فاكس آخر</span></li><li class="treeList noSub"><span class="GUID-B7C2CFAB-D18A-4C67-B87A-015D6FA0D701_51 click">نقل الفاكسات إلى الكمبيوتر</span></li><li class="treeList noSub"><span class="GUID-991B50C5-65E1-46E5-A4E6-4BC64B36A26C_52 click">نقل تقرير يومية الفاكس إلى جهاز فاكس آخر</span></li></ul></li><li class="treeList existSub"><span class="GUID-EC484FFB-768D-4179-A47D-71F223D2090B_53 click">انحشار المستندات</span><ul><li class="treeList noSub"><span class="GUID-717300AA-D285-4536-9F69-48486E7E3BE1_54 click">المستند محشور في أعلى وحدة تغذية المستندات التلقائية</span></li><li class="treeList noSub"><span class="GUID-6F94F480-66B7-4A9F-BFA9-1A8F519A4F3B_55 click">المستند محشور أسفل غطاء المستندات</span></li><li class="treeList noSub"><span class="GUID-E78FDEFF-E744-4DD1-A5C6-44C8903D4F4C_56 click">إزالة بقايا الورق الصغيرة المحشورة في وحدة تغذية المستندات التلقائية</span></li></ul></li><li class="treeList existSub"><span class="GUID-163C30CF-8F1B-4DD6-9E47-C668033D4334_57 click">انحشار الورق</span><ul><li class="treeList noSub"><span class="GUID-99498582-3989-4E14-8E6A-417807157C10_58 click">انحشار الورق في درج الورق</span></li><li class="treeList noSub"><span class="GUID-419D6306-764F-4423-A13C-3B62FB309F5F_59 click">انحشار الورق في درج خروج الورق</span></li><li class="treeList noSub"><span class="GUID-38CE579F-FE93-4C0F-9771-22365CB42492_60 click">لقد انحشر الورق في الجزء الخلفي للجهاز</span></li><li class="treeList noSub"><span class="GUID-ACEEC26B-103A-45C3-8C5C-24DE95E37B7D_61 click">لقد انحشر الورق داخل الجهاز</span></li><li class="treeList noSub"><span class="GUID-B1BDD306-D4CC-4ECE-92A0-10016B97CCB4_62 click">انحشار الورق في درج الطباعة على الوجهين</span></li></ul></li><li class="treeList noSub"><span class="GUID-EEC1EE16-C8ED-4BC3-B3C4-27B0AACF0D44_63 click">تحسين جودة الطباعة</span></li><li class="treeList existSub"><span class="GUID-11DA4E17-CE86-4B10-908F-F61C2BC6EA65_64 click">معلومات الجهاز</span><ul><li class="treeList noSub"><span class="GUID-C4524CDF-613B-43A0-8DBC-9C78AA78FD44_65 click">التحقق من الرقم المسلسل</span></li><li class="treeList noSub"><span class="GUID-E9A02C26-648B-4663-8563-540281385827_66 click">التحقق من إصدار البرامج الثابتة</span></li><li class="treeList noSub"><span class="GUID-8D2149AC-11BA-47D0-A6E2-7E9DBF486819_67 click">وظائف إعادة التعيين</span></li><li class="treeList noSub"><span class="GUID-318A3024-2E7A-4BD8-9871-192A19D9C244_68 click">كيفية إعادة تعيين الجهاز</span></li></ul></li></ul><div class="GUID-98863EF9-9F71-4A9E-9DA0-E5590CAE9896_69 click leftPaneMenuTop parent open"><ul><li>الصيانة الدورية</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList existSub"><span class="GUID-CAD814C6-7940-415A-A119-C18C398A0FBE_70 click">استبدال الملحقات</span><ul><li class="treeList noSub"><span class="GUID-773A3259-9728-451A-8464-6162470F9E3D_71 click">التعرف على خرطوشة الحبر</span></li><li class="treeList noSub"><span class="GUID-39519B32-BEE9-42AA-835E-EA46CF2FBC3E_72 click">استبدال خرطوشة مسحوق الحبر</span></li><li class="treeList noSub"><span class="GUID-620BCC64-541C-4772-A99F-C110BBD9CD73_73 click">التعرف على وحدة الأسطوانة</span></li><li class="treeList noSub"><span class="GUID-5F414653-A427-4173-BF17-01A1C585A2CE_74 click">استبدال وحدة الأسطوانة</span></li></ul></li><li class="treeList existSub"><span class="GUID-A8AA3A79-F544-4195-BF93-8E534CD94B9E_75 click">تنظيف الجهاز</span><ul><li class="treeList noSub"><span class="GUID-218C89F3-7B41-4A3E-8259-A2DD44F6BDD7_76 click">تنظيف الماسح الضوئي</span></li><li class="treeList noSub"><span class="GUID-CF550A44-ECC3-4D0F-9524-0155EA93DD97_77 click">تنظيف شاشة LCD اللمسية</span></li><li class="treeList noSub"><span class="GUID-F406D846-93AB-4C32-ABE0-C31497BAAAE0_78 click">تنظيف سلك الكورونا</span></li><li class="treeList noSub"><span class="GUID-2C9FB259-6CCB-4E3A-9957-2D2B68EFD062_79 click">تنظيف وحدة الأسطوانة</span></li><li class="treeList noSub"><span class="GUID-1A443C91-E08C-416E-816D-A9D48E304824_80 click">تنظيف أسطوانات التقاط الورق</span></li></ul></li><li class="treeList noSub"><span class="GUID-AC2C04E5-118B-4AE8-8CA4-5AB5B52A07C3_81 click">التحقق من فترة الصلاحية المتبقية للأجزاء</span></li><li class="treeList noSub"><span class="GUID-76FF6C27-179B-40B4-8F15-33ECEFC649E8_82 click">تعبئة جهاز Brother وشحنه</span></li></ul><div class="GUID-537259D7-6193-4816-8171-49B709517748_83 click leftPaneMenuTop parent open"><ul><li>إعدادات الجهاز</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList existSub"><span class="GUID-47F1B460-CBDF-4AEF-AF25-32BD1B6A56CA_84 click">إعدادات عامة</span><ul><li class="treeList noSub"><span class="GUID-562FB8D2-4DDC-4DC0-996C-BE0F96BE8778_85 click">تغيير الوضع الافتراضي</span></li><li class="treeList noSub"><span class="GUID-D7355BB0-4151-4151-BC8E-A422AF0F0678_86 click">تعيين مؤقت الوضع</span></li><li class="treeList existSub"><span class="GUID-A1A1797F-6D5D-46E6-9318-C38C75A248D2_87 click"> ضبط مستوى الصوت بالجهاز</span><ul><li class="treeList noSub"><span class="GUID-518EC140-1EED-4BF0-AE9A-0DA550D57A2F_88 click">تعديل مستوى صوت الرنين</span></li><li class="treeList noSub"><span class="GUID-3596550A-3704-46DE-92F4-6CCCBA5CDD30_89 click">تعديل مستوى صوت نغمة التحذير</span></li><li class="treeList noSub"><span class="GUID-F2AFF869-7CE2-4028-AB37-D8C29B15CF99_90 click">تعديل درجة صوت السماعة</span></li></ul></li><li class="treeList noSub"><span class="GUID-1DD8605D-95D0-41AB-A4B0-F73397F82F20_91 click">التغيير للتوقيت الصيفي</span></li><li class="treeList noSub"><span class="GUID-24055656-C009-4779-A8CA-7CA4D8F065CF_92 click">تعيين العد التنازلي لوضع السكون</span></li><li class="treeList noSub"><span class="GUID-FA1956E5-89D1-4982-9FC2-ED56DE7E670F_93 click">حول وضع السكون العميق</span></li><li class="treeList noSub"><span class="GUID-FC64BD13-FD98-4E50-AEA9-D396D6DA41E4_94 click">تعيين وضع إيقاف التشغيل تلقائيًا</span></li><li class="treeList noSub"><span class="GUID-567048DE-D85D-4F61-99E2-E4BAF2DAB8ED_95 click">تعيين التاريخ والوقت</span></li><li class="treeList noSub"><span class="GUID-3B5AACC4-824E-45E0-A4A3-F92615AFA4DA_96 click">تعيين المنطقة الزمنية</span></li><li class="treeList noSub"><span class="GUID-5F37402A-3A74-4931-B3AD-A4607153557A_97 click">ضبط سطوع الإضاءة الخلفية لشاشة LCD</span></li><li class="treeList noSub"><span class="GUID-CA280D28-2E5B-47A4-83E7-530B2855110E_98 click">تعديل التباين بشاشة LCD</span></li><li class="treeList noSub"><span class="GUID-07071DAE-2647-4365-A640-78A8B963F55E_99 click">تغيير مدى بقاء الإضاءة الخلفية لشاشة LCD</span></li><li class="treeList noSub"><span class="GUID-3D9E2B87-2790-4D5C-8A6B-5889DBA4356F_100 click">تقليل استهلاك مسحوق الحبر</span></li><li class="treeList noSub"><span class="GUID-9E4A567C-4C8B-4804-9F1A-C63D9B56AAE9_101 click">تعيين وضع المتابعة</span></li><li class="treeList noSub"><span class="GUID-4D78FCEE-A2A7-46FB-8589-3A67FE61549D_102 click">التعرف على استلام الفاكسات في وضع المتابعة</span></li><li class="treeList noSub"><span class="GUID-0081546F-7FC6-414D-B150-28247DD57F70_103 click">تعيين معرّف المحطة</span></li><li class="treeList noSub"><span class="GUID-9D2DC269-B37D-41D7-8B32-DBE3BA4E605C_104 click">تعيين النغمة أو النبض وضع الاتصال</span></li><li class="treeList noSub"><span class="GUID-7F4A24C3-CD5C-4380-A7B6-3F17657A5372_105 click">إضافة بادئة إلى كل رقم فاكس</span></li><li class="treeList noSub"><span class="GUID-7F4CE189-21F4-48E8-849A-C0A0E3A0719A_106 click">منع الاتصال رقم خطأ ‏(تقييد الاتصال)‏</span></li><li class="treeList noSub"><span class="GUID-9288F017-115B-4960-A372-200BC65C917B_107 click">تعيين الوضع الصامت</span></li><li class="treeList noSub"><span class="GUID-333620AE-8B74-420D-8E9C-2B1D7F4F11F0_108 click">في حالة انقطاع الطاقة ‏(تخزين الذاكرة)‏</span></li><li class="treeList noSub"><span class="GUID-FA6EF178-5D77-42E0-86A0-2AEC108A7BA6_109 click">تغيير إعداد لوحة المفاتيح</span></li></ul></li><li class="treeList existSub"><span class="GUID-876D5FAE-DFC6-419A-B562-90281E0E2C14_110 click">حفظ إعدادات المفضلة كاختصار</span><ul><li class="treeList noSub"><span class="GUID-A7AA5236-501B-4FC2-848A-34E5F12D50D0_111 click">إضافة اختصارات النسخ</span></li><li class="treeList noSub"><span class="GUID-D9BC0A7E-BF2C-410A-867C-D2D6C324B393_112 click">إضافة اختصارات الفاكس</span></li><li class="treeList noSub"><span class="GUID-A61D37E9-A20D-4EE1-8B7E-CE0B868F5E42_113 click">إضافة اختصارات المسح الضوئي</span></li><li class="treeList noSub"><span class="GUID-A52A5C5A-6FB2-4CDA-810B-FA7FEC21D665_114 click">إضافة اختصارات Web Connect</span></li><li class="treeList noSub"><span class="GUID-23EC4ECA-3624-42EF-8887-4CB69E0846C1_115 click">إضافة اختصارات التطبيقات</span></li><li class="treeList noSub"><span class="GUID-70F38CAF-8E9C-4C83-A0E5-77FAF0AB4642_116 click">تغيير إعدادات الاختصارات</span></li><li class="treeList noSub"><span class="GUID-A054090A-2E57-4B4B-92AE-31E175708DE7_117 click">تحرير أسماء الاختصارات</span></li><li class="treeList noSub"><span class="GUID-EB6A5479-CC16-478C-A851-FE0883F6E42A_118 click">حذف الاختصارات</span></li><li class="treeList noSub"><span class="GUID-53BE518A-E302-4493-B687-CA0CC817D159_119 click">استدعاء الاختصارات</span></li></ul></li><li class="treeList existSub"><span class="GUID-9706CB3F-C999-4E88-946B-6D99896C3084_120 click">تقارير الطباعة</span><ul><li class="treeList noSub"><span class="GUID-87ACF115-CEEF-447D-9374-4DCC579DBBB7_121 click">التقارير</span></li><li class="treeList noSub"><span class="GUID-DC141932-B6D8-487D-B95B-6E09DC917772_122 click">طباعة تقرير</span></li></ul></li><li class="treeList existSub"><span class="GUID-1A38E32F-14C6-4850-9F94-2F2097CD5377_123 click">الإعداد عن بُعد</span><ul><li class="treeList existSub"><span class="GUID-CA1B455A-8562-4895-9EFA-DA68D42D5665_124 click">الإعداد عن بُعد ‏(Windows<span class="sup" id="GUID-ABD91D9F-3938-452F-86BF-6413F16FB0F5">‎®‎</span>‎)‏</span><ul><li class="treeList noSub"><span class="GUID-DD156592-04F5-42D4-8C12-5A379D23B45A_125 click">استخدم الإعداد عن بعد لإعداد جهاز Brother من الكمبيوتر ‏(Windows<span class="sup" id="GUID-E64D344D-9D2D-4B4B-92F0-0582677F282B">‎®‎</span>)‏</span></li><li class="treeList noSub"><span class="GUID-84C1612B-FF06-43FF-A42E-6ADE9CA95537_126 click">استخدم الإعداد عن بعد لإعداد جهاز Brother بواسطة ControlCenter4 ‎(Windows<span class="sup" id="GUID-AA5FA8C5-6E23-4810-BE71-4C7264D266D2">‎®‎</span>)‎</span></li><li class="treeList noSub"><span class="GUID-317E95F8-3A36-4ABC-A54B-043876841D2E_127 click">استخدم الإعداد عن بعد لإعداد دفتر عناوين Brother بواسطة ControlCenter4 ‎(Windows<span class="sup" id="GUID-7D2CD682-28B6-42C8-B2CA-9CF8A0F3BC19">‎®‎</span>)‎</span></li></ul></li><li class="treeList existSub"><span class="GUID-9027BE58-43A2-46D8-8A15-C7DCB7694A1A_128 click">الإعداد عن بُعد ‏(Macintosh‎)‏</span><ul><li class="treeList noSub"><span class="GUID-8085EE15-BFA1-4D5C-9B62-A0BFCCB42A08_129 click">استخدم الإعداد عن بعد لإعداد جهاز Brother بواسطة ControlCenter2 ‎(Macintosh)‎</span></li><li class="treeList noSub"><span class="GUID-B8B02C2E-1030-49DB-8680-216327BE6E25_130 click">استخدم الإعداد عن بعد لإعداد دفتر عناوين Brother بواسطة ControlCenter2 ‎(Macintosh)‎</span></li></ul></li></ul></li><li class="treeList existSub"><span class="GUID-38DA6CE8-168D-4271-AC94-D3566774FB1F_131 click">جداول الإعدادات والميزات</span><ul><li class="treeList existSub"><span class="GUID-C49B211C-9F2F-4B58-8A92-A0BC9125F1D4_132 click">لطرز LCD ذات سعة سطران</span><ul><li class="treeList existSub"><span class="GUID-A5726D41-464B-4982-87AF-29FC93B04A78_133 click">جداول الإعدادات ‏(طرز MFC)‏</span><ul><li class="treeList noSub"><span class="GUID-1BA57EAC-1A2F-4FDF-A11F-0400A9EC5325_134 click">General Setup ‏(الإعداد العام)‏</span></li><li class="treeList noSub"><span class="GUID-40207681-2BB5-439C-86CC-E517F3B4EB13_135 click">Fax ‏(الفاكس)‏</span></li><li class="treeList noSub"><span class="GUID-15C1828A-7319-4440-875C-9239346E26E8_136 click">Copy ‏(نسخ)‏</span></li><li class="treeList noSub"><span class="GUID-971411D2-3A87-4AFE-8B29-21C92E4EE3A9_137 click">Printer ‏(الطابعة)‏</span></li><li class="treeList noSub"><span class="GUID-22383EEE-3CEE-44FF-B321-0154ECA87973_138 click">Print Reports ‏(طباعة التقارير)‏</span></li><li class="treeList noSub"><span class="GUID-6F19C774-7319-454D-8231-593A96B0FA42_139 click">Network ‏(الشبكة)‏</span></li><li class="treeList noSub"><span class="GUID-C393230E-FFFD-45B5-B04D-86A5D728167E_140 click">Machine Info‎.‎ ‏(معلومات الجهاز)‏</span></li><li class="treeList noSub"><span class="GUID-E2E0F7D6-7FE6-4A96-9AC4-55AF5227DB57_141 click">Initial Setup ‏(الإعداد الأولي)‏</span></li></ul></li><li class="treeList existSub"><span class="GUID-199D2E20-70DB-40FB-8BF3-CE2F5D1B5533_142 click">جداول الإعدادات ‏(طرز DCP)‏</span><ul><li class="treeList noSub"><span class="GUID-7AFB7033-58AC-4FF7-BAE2-FDD7D4BE49AE_143 click">General Setup ‏(الإعداد العام)‏</span></li><li class="treeList noSub"><span class="GUID-D96CAAA9-F94D-437F-B7B1-DC0DAB229D72_144 click">Copy ‏(نسخ)‏</span></li><li class="treeList noSub"><span class="GUID-4B5F5558-43C5-4206-B90C-5D218090246A_145 click">Printer ‏(الطابعة)‏</span></li><li class="treeList noSub"><span class="GUID-D5B76094-529E-41DD-917C-58EDEA9E754D_146 click">Network ‏(الشبكة)‏</span></li><li class="treeList noSub"><span class="GUID-DA67F685-6E2A-43A9-98EA-29C1E21525D2_147 click">Machine Info‎.‎ ‏(معلومات الجهاز)‏</span></li></ul></li></ul></li><li class="treeList existSub"><span class="GUID-375CAF60-29DA-4911-9918-95977D4FCFE8_148 click">لطرز شاشة اللمس 2.7 بوصة ‏(67.5 ملم)‏</span><ul><li class="treeList existSub"><span class="GUID-5A102E96-9797-46A4-874E-43E821364675_149 click">جداول الإعدادات ‏(طرز MFC)‏</span><ul><li class="treeList noSub"><span class="GUID-87E9544A-FB6D-4872-8709-4D770425CF64_150 click">All Settings ‏(جميع الإعدادات)‏General Setup ‏(الإعداد العام)‏</span></li><li class="treeList noSub"><span class="GUID-1777BF54-82C0-47E1-8A36-B87E441C9962_151 click">All Settings ‏(جميع الإعدادات)‏Shortcut Settings ‏(إعدادات القائمة المختصرة)‏</span></li><li class="treeList noSub"><span class="GUID-CB4D3BD9-A42B-471F-BDFA-6F52A6D3DE92_152 click">All Settings ‏(جميع الإعدادات)‏Fax ‏(الفاكس)‏</span></li><li class="treeList noSub"><span class="GUID-525C4F92-C058-457A-943E-F47D6C9B1EAC_153 click">All Settings ‏(جميع الإعدادات)‏Printer ‏(الطابعة)‏</span></li><li class="treeList noSub"><span class="GUID-6198CD35-56E5-4EDF-A20B-2E50FC9C137B_154 click">All Settings ‏(جميع الإعدادات)‏Network ‏(الشبكة)‏</span></li><li class="treeList noSub"><span class="GUID-19E80A41-CB96-4D20-872E-51E69E8D4A18_155 click">All Settings ‏(جميع الإعدادات)‏Print Reports ‏(طباعة التقارير)‏</span></li><li class="treeList noSub"><span class="GUID-A283AC6F-212D-4B74-ABCF-AFA076C9DDA6_156 click">All Settings ‏(جميع الإعدادات)‏Machine Info‎.‎ ‏(معلومات الجهاز)‏</span></li><li class="treeList noSub"><span class="GUID-3AF9F4D7-643D-4048-AB78-00CC2F47B370_157 click">All Settings ‏(جميع الإعدادات)‏Initial Setup ‏(الإعداد الأولي)‏</span></li></ul></li><li class="treeList existSub"><span class="GUID-B998C247-5233-45A8-9ACD-B5644C62DD91_158 click">جداول الإعدادات ‏(طرز DCP)‏</span><ul><li class="treeList noSub"><span class="GUID-2716597A-C15E-44AF-BEF3-2810C2AACB09_159 click">All Settings ‏(جميع الإعدادات)‏General Setup ‏(الإعداد العام)‏</span></li><li class="treeList noSub"><span class="GUID-5C167621-078A-4B9A-9B0D-26B85F3E349C_160 click">All Settings ‏(جميع الإعدادات)‏Shortcut Settings ‏(إعدادات القائمة المختصرة)‏</span></li><li class="treeList noSub"><span class="GUID-09A8DE0B-9D0C-48E0-B25F-938138B24E09_161 click">All Settings ‏(جميع الإعدادات)‏Printer ‏(الطابعة)‏</span></li><li class="treeList noSub"><span class="GUID-69F31310-1B46-4DD9-A840-1E999C07C53E_162 click">All Settings ‏(جميع الإعدادات)‏Network ‏(الشبكة)‏</span></li><li class="treeList noSub"><span class="GUID-05EE7D2D-CFF1-49BE-8A6E-5F54B5CE1ED7_163 click">All Settings ‏(جميع الإعدادات)‏Print Reports ‏(طباعة التقارير)‏</span></li><li class="treeList noSub"><span class="GUID-F8BBA625-A129-469A-900B-6D31828CFD2F_164 click">All Settings ‏(جميع الإعدادات)‏Machine Info‎.‎ ‏(معلومات الجهاز)‏</span></li><li class="treeList noSub"><span class="GUID-C2449F29-373B-4579-A3E7-7CDBDEE60EB8_165 click">All Settings ‏(جميع الإعدادات)‏Initial Setup ‏(الإعداد الأولي)‏</span></li></ul></li><li class="treeList existSub"><span class="GUID-8FB86D09-C0AE-4443-A16F-C89C11320077_166 click">جداول الميزات ‏(طرز MFC)‏</span><ul><li class="treeList noSub"><span class="GUID-F8BD74BA-1EB6-4EA0-A9C8-20A2367D3572_167 click">Fax ‏(الفاكس)‏</span></li><li class="treeList noSub"><span class="GUID-77CD3987-B7F7-4783-BEED-0BDF9CC7E0E3_168 click">Copy ‏(نسخ)‏</span></li><li class="treeList noSub"><span class="GUID-81E4A044-970D-4319-97B8-E7AFE9CB4C8B_169 click">Scan ‏(مسح ضوئي)‏</span></li><li class="treeList noSub"><span class="GUID-CE4A9A50-F261-453A-BC8B-4DA68824480D_170 click">Web ‏(الويب)‏</span></li><li class="treeList noSub"><span class="GUID-0D109A97-40E4-40CA-A0DC-12F8070792DA_171 click">Shortcuts ‏(القائمة المختصرة )‏</span></li><li class="treeList noSub"><span class="GUID-A092CAA8-61E7-4BF7-8B36-E6BA9593FEDA_172 click">Toner ‏(الحبر)‏</span></li><li class="treeList noSub"><span class="GUID-CD306FCF-EBFF-4678-98ED-559CF0317158_173 click">إعداد Wi-Fi</span></li></ul></li><li class="treeList existSub"><span class="GUID-001EF1BD-6BA9-43D1-886C-87D1522D64CA_174 click">جداول الميزات ‏(طرز DCP)‏</span><ul><li class="treeList noSub"><span class="GUID-7F8C29F0-5938-4E61-A9E1-4F28B3B71F60_175 click">Copy ‏(نسخ)‏</span></li><li class="treeList noSub"><span class="GUID-36D17F5A-81FD-4243-9D62-9626F71C784F_176 click">Scan ‏(مسح ضوئي)‏</span></li><li class="treeList noSub"><span class="GUID-D0CC6D00-B75A-4940-8FCE-585D6BED15F5_177 click">Web ‏(الويب)‏</span></li><li class="treeList noSub"><span class="GUID-FCE96AB4-B9EA-48A5-B836-BA436FCA3865_178 click">Shortcuts ‏(القائمة المختصرة )‏</span></li><li class="treeList noSub"><span class="GUID-EE8BD103-BFC5-45DF-9C26-50690A89E50B_179 click">Toner ‏(الحبر)‏</span></li><li class="treeList noSub"><span class="GUID-C6DB76B5-5E7A-4196-B4D0-C874B256C651_180 click">إعداد Wi-Fi</span></li></ul></li></ul></li></ul></li></ul><div class="GUID-20D07F62-B7BC-44DD-9404-58B4DC656234_181 click leftPaneMenuTop parent open"><ul><li>المُلحق</li></ul></div><ul class="treeview-famfamfam treeview sideTreeView"><li class="treeList existSub"><span class="GUID-6C5818DA-0051-4108-8614-D2F3ED2C4252_182 click">المواصفات</span><ul><li class="treeList noSub"><span class="GUID-E9A72131-CFC5-4CFA-B6FB-267E0C5D055F_183 click">المواصفات العامة</span></li><li class="treeList noSub"><span class="GUID-89415565-343D-4CBC-B061-4E67F48D0E2C_184 click">مواصفات حجم المستند</span></li><li class="treeList noSub"><span class="GUID-63D43178-F83C-480B-93CF-4A5F8ABD3BD9_185 click">مواصفات وسائط الطباعة</span></li><li class="treeList noSub"><span class="GUID-F8D0A31B-E498-473B-93EB-D92A4FD54139_186 click">مواصفات الفاكس</span></li><li class="treeList noSub"><span class="GUID-5EB23F62-BD1B-48B6-9534-D734D0961159_187 click">مواصفات النسخ</span></li><li class="treeList noSub"><span class="GUID-C01AC177-F4B2-45E3-BE74-2F8F7E847480_188 click">مواصفات الماسحة الضوئية</span></li><li class="treeList noSub"><span class="GUID-45EC7739-A4DA-461C-BE5B-C014389DE1A6_189 click">مواصفات الطابعة</span></li><li class="treeList noSub"><span class="GUID-A678A7FB-DDD7-46FB-8978-85DF1CBCD7C3_190 click">مواصفات الواجهة</span></li><li class="treeList noSub"><span class="GUID-A91A226E-B887-448D-A325-170AE57248EE_191 click">البروتوكولات المدعومة وميزات الأمان</span></li><li class="treeList noSub"><span class="GUID-43DA91F5-FAB6-437B-BDD9-3FF78225E453_192 click">مواصفات متطلبات الكمبيوتر</span></li><li class="treeList noSub"><span class="GUID-F0A74763-C909-451D-B172-0468B7C53CAB_193 click">مواصفات الملحقات</span></li></ul></li><li class="treeList noSub"><span class="GUID-82205FCF-2D40-49BA-9A3C-F350167AC36B_194 click">كيفية إدخال النصوص على جهاز Brother</span></li><li class="treeList noSub"><span class="GUID-F0DC9071-9038-4F29-9525-B2FE102C9BB4_195 click">الملحقات</span></li></ul></div><div><ul class="banner"><li><a href="http://support.brother.com/" TARGET="_blank"><img src="images/top_banner01.gif" title="Brother Solutions Center، موقع الخدمة والدعم الفني" width="200" height="50" onmouseover="chgText('bnrTxtArea',0)" onmouseout="noneText('bnrTxtArea')"></img></a></li><li><a href="http://www.brother.com/original/index.html" TARGET="_blank"><img src="images/top_banner02.gif" title="لوازم اصلية" width="202" height="52" onmouseover="chgText('bnrTxtArea',1)" onmouseout="noneText('bnrTxtArea')"></img></a></li><li><a href="http://www.brother.com/creativecenter/global/" TARGET="_blank"><img src="images/top_banner03.gif" title="Brother CreativeCentre" width="200" height="50" onmouseover="chgText('bnrTxtArea',2)" onmouseout="noneText('bnrTxtArea')"></img></a></li><li><a href="http://www.brother.com/html/registration/" TARGET="_blank"><img src="images/top_banner04.gif" title="تسجيل المنتج" width="202" height="52" onmouseover="chgText('bnrTxtArea',3)" onmouseout="noneText('bnrTxtArea')"></img></a></li></ul><script type="text/javascript" src="common/js/topBannerTxt.js">/* */</script><div id="bnrTxtArea"></div></div></div><div xmlns="" id="rightColumn"><div class="clearfix" id="searchArea"><form name="searchForm" method="get" onSubmit="return false"><input name="textfield" id="searchTextArea" type="text"></input><span class="searchClick">بحث</span></form><p class="searchAreaLinks"><span class="searchAreaClick" onClick="spanClick('sitemap')">خارطة الموقع</span></p></div><div id="mainContents"></div></div></div><div xmlns="" id="footer"><p class="version"><span class="versionResourcePrefix">الإصدار</span>0</p><p class="footerCodes"><span class="language"><span style="color:white;">ar-AE/UK UK UK UK UK </span>ARB</span></p><p><span><a href="http://welcome.solutions.brother.com/bsc/public_s/common/as/as_ot/en/legal.html" TARGET="_blank">شرعي</a></span> | <span><a href="http://welcome.solutions.brother.com/bsc/public_s/common/as/as_ot/en/privacy.html" TARGET="_blank">سياسة الخصوصية</a></span> | <span><a href="http://www.brother.com/index.html" TARGET="_blank">الموقع العالمي</a></span></p><p><span>©</span><span class="year" id="GUID-F2E447B2-5F2D-4E05-B93C-B9F5F8502FC6">2014</span><span>شركة Brother Industries, Ltd . جميع الحقوق محفوظة.</span></p></div></div></body></html>
