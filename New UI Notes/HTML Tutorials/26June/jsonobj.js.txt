@@ -1,0 +1,33 @@
+var contactDetails = {
+	'fname': 'TEST',
+	"lname": 'SAmple',
+	'emailID': {
+		'personl': ["abc@gmail.com", 'test@yahoo.com'],
+		offtl: "test@office.com"
+	},
+	contact: {
+		"offt": 2342342,
+		"personl": [1233453,232,23423]
+	},
+	profilePic: '..abc.png',
+	ringTone: 'abc.mp3',
+	address: {
+		off: {
+			"streetname": "abc Road",
+			pin: 3412423,
+			countryDetails: {
+				"name": 'INDIA',
+				code: 2342
+			}
+		},
+		prsnl: {
+			hno: '123',
+			location: 'Hyderabad'
+		}
+	},
+	dob: {
+		month: '01',
+		day: 9,
+		year: 2019
+	}
+}

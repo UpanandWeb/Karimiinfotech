@@ -1,0 +1,52 @@
+var prodDetails = [
+	{
+		name: 'Laptop',
+		price: '$320',
+		manu: '<b>Samsung</b>',
+		rating: '3/5'
+	},
+	{
+		name: 'Laptop',
+		price: '$330',
+		manu: 'Samsung',
+		rating: '3/5'
+	},
+	{
+		name: 'Laptop',
+		price: '$360',
+		manu: 'Samsung',
+		rating: '3/5'
+	}
+]
+
+function showProdDetails(pDetails) {
+	var litag = document.createElement('li');
+	litag.setAttribute("class", 'pItem');
+	
+	var imTag = document.createElement("img");
+	imTag.setAttribute("src", 'images/laptop.jpg');
+	litag.appendChild(imTag);
+
+	var div1Tag = document.createElement("div");
+	div1Tag.innerText = 'Product Name: ' + pDetails.name;
+	litag.appendChild(div1Tag);
+
+	var div2Tag = document.createElement('div');
+	div2Tag.innerText = 'Product Price: ' + pDetails['price'];
+	litag.appendChild(div2Tag);
+
+	var div3Tag = document.createElement('div');
+	div3Tag.innerHTML = 'Manufacturer: ' + pDetails.manu;
+	litag.appendChild(div3Tag);
+
+	var div4Tag = document.createElement('div');
+	div4Tag.innerText = 'Rating: ' + pDetails.rating;
+	litag.appendChild(div4Tag);
+
+	document.querySelector(".container").appendChild(litag);
+	console.log(litag);
+}	
+
+for (var i = 0; i < prodDetails.length; i++) {
+	showProdDetails(prodDetails[i]);
+}

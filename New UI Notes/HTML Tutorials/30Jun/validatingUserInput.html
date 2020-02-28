@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>
+			Validating User input data
+		</title>
+		<style type="text/css">
+			.container {
+				border: 2px solid;
+				margin: 20px auto;
+				padding: 10px;
+			}
+			li {
+				list-style: none;
+				border: 1px solid;
+				margin: 10px;
+				padding: 10px;
+			}
+			.rBlock {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li>
+					Enter first value <input type="text" id="fval" onkeypress="return validateData(event);">
+				</li>
+				<li>
+					Enter second value <input type="text" id="sval">
+				</li>
+				<li>
+					<input type="button" value="DO JOB" onclick="doSum(event)">
+				</li>
+				<li class="rBlock">
+					The sum of numbers is <span></span>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var doSum = function(event){
+				console.log(event);
+				var result = 0;
+				var p1 = document.querySelector("#fval").value;
+				p1 = parseInt(p1);
+				var p2 = document.querySelector("#sval").value;
+				p2 = parseInt(p2);
+				result = p1 + p2;
+				document.querySelector("span").innerText = result;
+				document.querySelector(".rBlock").style.display = 'block';
+			}
+
+			function validateData(event){
+				console.log(event);
+				console.log("i got key presssed");
+				if (event.charCode >= 97 && event.charCode <= 122 ) {
+					return false;
+				} else {
+					return true;
+				}
+			}
+		</script>
+	</body>
+</html>

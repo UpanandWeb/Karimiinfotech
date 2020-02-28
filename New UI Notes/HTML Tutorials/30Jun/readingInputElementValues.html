@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>
+			Reading Data from input elements.
+		</title>
+		<link rel="stylesheet" type="text/css" href="app.css">
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			
+				<ul>
+					<li class="title">
+						<h3>User Registration Page</h3>
+					</li>
+					<li>
+						Enter user name: <input type="text" name="uname" id="userName" onblur="validateData()">
+
+						<div class="errmsg" id="unameErr">USer name is mandatry</div>
+					</li>
+					<li>
+						Enter user account Pwd <input name="upwd" type="password" id="upwd">
+						<input type="checkbox" onChange="showPWD()" id="shwPwd">
+					</li>
+					<li>
+						Age: <input type="text" id="uage">
+						<div class="errmsg" id="uAgeErr">Age should be under 18</div>
+					</li>
+					<li>
+						Country: 
+						<select id="ucountry">
+							<option value="ind">INDIA</option>
+							<option value="CHN">CHINA</option>
+							<option value="JAP">JAPAN</option>
+							<option value="US">USA</option>
+							<option value="NP">NEPAL</option>
+						</select>
+					</li>
+					<li>
+						About urself: 
+						<textarea id="aboutu"></textarea>
+					</li>
+					<li>
+						<input type="button" value="Register" onclick="readUserInfo()">
+					</li>
+				</ul>			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+var http = require("http");
+var url = require("url");
+var fs = require("fs");
+var server = http.createServer(function(req, response){
+	/*fs.readFile("sample.txt", function(err, data){
+		console.log("data is");
+		console.log(data);
+		response.end(data);
+	}) */
+	var data = url.parse(req.url, true);
+
+	
+	var details = data.query;
+	var userData = JSON.stringify(details);
+	fs.appendFile("sample.txt", userData, function(err, data){
+		if (err) {
+			response.end("Error while writing");		
+		} else {
+			response.end("Data been saved");		
+		}
+	})
+	// response.end("am done");
+});
+
+server.listen(8082);

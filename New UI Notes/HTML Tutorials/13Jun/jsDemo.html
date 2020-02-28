@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>
+			Demonstrating JS Functions.
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var sname, sage, m1, m2,m3;
+			var total, avg;
+			function readValues() {
+				sname = prompt("Enter sname");
+				sage = prompt("enter s age");
+				m1 = prompt("m1");
+				m2 = prompt("m2");
+				m3 = prompt("m3");
+
+				m1 = parseInt(m1);
+				m2 = parseInt(m2);
+				m3 = parseInt(m3);
+			}
+			function getTotalAvg() {
+				total = m1 + m2 + m3;
+				avg = total / 3;
+			}
+			function displayData() {
+				readValues();
+				getTotalAvg();
+				console.log("Student details");
+				console.log("student name " + sname);
+				console.log("age " + sage);
+				console.log("Total marsks" + total);
+				console.log("Avg is " + avg);
+			}
+			console.log("student details");
+			
+			displayData();
+		</script>
+	</body>
+</html>

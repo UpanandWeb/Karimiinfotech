@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Function With return value.
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function doJob() {
+				var msg = "heelo";
+				console.log("about to perform sum of numbers");
+				var fVal = prompt("Enter first value");
+				var sVal = prompt("Enter second value");
+				var sum = doAddition(fVal, sVal);
+				console.log("the sum is " + sum);
+			}
+			function doAddition(p1, p2) {
+				
+				p1 = parseInt(p1);
+				p2 = parseInt(p2);
+				var result = p2 + p1;
+				return result;
+			}
+			doJob();
+		</script>
+	</body>
+</html>

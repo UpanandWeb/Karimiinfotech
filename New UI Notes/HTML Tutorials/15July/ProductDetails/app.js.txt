@@ -1,0 +1,49 @@
+var prodDetails = [];
+
+function showProdDetails(pDetails) {
+	// var litag = document.createElement('li');
+	var litag = $('<li></li>').addClass('pItem');
+	
+	var imTag = $("<img />").attr("src", 'images/laptop.jpg');
+	litag.append(imTag);
+
+	var div1Tag = $("<div></div>").text('Product Name: ' + pDetails.name);
+	litag.append(div1Tag);
+
+	var div2Tag = $("<div></div>").text('Product Price: ' + pDetails['price']);
+	litag.append(div2Tag);
+
+	var div3Tag =  $("<div></div>").html('Manufacturer: ' + pDetails.manu);
+	litag.append(div3Tag);
+
+	var div4Tag =  $("<div></div>").text('Rating: ' + pDetails.rating);
+	litag.append(div4Tag);
+
+	$(".container").append(litag);
+	console.log(litag);
+}	
+
+function getProdData() {
+	var url = 
+	$.ajax({
+		url: "http://localhost:8082/get/proddetails/data",
+		method: 'GET',
+		dataType: 'JSON',
+		success: function(res) {
+			console.log("success");
+			console.log(res);
+			prodDetails = res.prodDetails;
+			loadData();
+		}, 
+		error: function(err) {
+			console.log("err");
+		}
+	});
+}
+
+function loadData(){
+	$(".container").innerHTML = '';
+	for (var i = 0; i < prodDetails.length; i++) {
+		showProdDetails(prodDetails[i]);
+	}
+}

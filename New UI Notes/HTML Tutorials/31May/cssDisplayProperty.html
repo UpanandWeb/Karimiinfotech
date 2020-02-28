@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating CSS Display Property
+		</title>
+		<style type="text/css">
+			.item {
+				width: 200px;
+				border: 2px solid;
+				display: block;
+			}
+			.block {
+				border: 1px solid;
+				width: 120px;
+				height: 120px;
+				text-align: center;
+				/*display: inline; */
+				display: inline-block;
+			}
+			.block1 {
+				background: green;
+			}
+			.block2 {
+				background: yellow;
+				/*display: none; 
+				visibility: hidden; */
+			}
+			.block3 {
+				background: #ccc;
+			}
+			.sline {
+				display: inline-block;
+				width: 33%;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="block block1">
+			BLOCK 1
+		</div>
+		<div class="block block2">
+			BLOCK 2
+		</div>
+		<div class="block block3">
+			BLOCK 3
+		</div>
+		<span class="item">ITEM 1</span>
+		<span class="item">ITEM 1</span>
+		<span class="item">ITEM 1</span>
+		<div class="sline">LOGO</div>
+		<div class="sline">cmpname</div>
+		<div class="sline">Date:...</div>
+
+	</body>
+</html>

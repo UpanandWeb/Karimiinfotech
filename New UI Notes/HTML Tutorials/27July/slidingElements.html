@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating sliding effects
+		</title>
+		<style type="text/css">
+			.parentContainer {
+				width: 400px;
+				height: 400px;
+				background: green;
+				overflow: hidden;
+				margin: 100px auto;
+
+			}
+			.img {
+				border: 1px solid;
+				width: 450px;
+				height: 260px;
+				margin: 10px;
+				background-size: 100%;
+			}
+			.cntnr1 {
+				background-image: url("images/one.png");
+			}
+			.cntnr2 {
+				background-image: url("images/two.png");
+			}
+			.cntnr3 {
+				background-image: url("images/three.png");
+			}
+			.cntnr4 {
+				background-image: url("images/four.png");
+			}
+			.cntnr5 {
+				background-image: url("images/five.png");
+			}
+			.mainContainer {
+				width: 3000px;
+				height: 300px;
+				overflow: auto;
+				border: 3px solid;
+				position: relative;
+				transition: left 2s;
+
+			}
+			.imgCntainer {
+				display: inline-block;
+			}
+			.imgcntrn {
+				display: inline-block;
+				width: 25%;
+				height: 280px;
+				background-size: 100%;
+			}
+			.sleft {
+
+			}
+			.slidebutton {
+				position: absolute;
+				cursor: pointer;
+				top: 300px;
+
+			}
+			.sright {
+				right: 25%;
+			}
+			.sleft {
+				left: 25%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slidebutton sleft"  onclick="doSlideLeft()">SLIDE LEFT</div>
+		<div class="parentContainer">
+			<div class="mainContainer">
+				<div class="imgcntrn cntnr1"></div>
+				<div class="imgcntrn cntnr2"></div>
+				<div class="imgcntrn cntnr3"></div>
+				<div class="imgcntrn cntnr4"></div>
+				<div class="imgcntrn cntnr5"></div>
+			</div>
+		</div>
+		<div class="slidebutton sright" onclick="doSlideRight()">SLIDE right</div>
+		<script type="text/javascript">
+			var width = document.querySelector(".imgcntrn").offsetWidth;
+			alert(width);
+			var cpostion = 0;
+			function doSlideLeft() {
+				cpostion += -500; 
+				document.querySelector(".mainContainer").style.left = cpostion + 'px';
+			}
+			function doSlideRight() {
+				cpostion += 500; 
+				document.querySelector(".mainContainer").style.left = cpostion + 'px';
+			}
+
+			setInterval(function(){
+				doSlideLeft();
+			}, 3000)
+		</script>
+	</body>
+</html>

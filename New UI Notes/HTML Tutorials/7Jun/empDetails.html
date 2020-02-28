@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Employee details.
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var empName, gender, totalSal, basicSal, pf, hra;
+			var tax = 0;
+			empName = "RAJ";
+			gender = 'Female';
+			basicSal = 45000;
+			pf = (basicSal * 14) / 100;
+			hra = (basicSal * 25) / 100;
+			totalSal = basicSal + hra + pf;
+
+
+			if (gender == 'Male'){
+				if (totalSal >= 50000) {
+					tax = (15 * totalSal) / 100;
+				} else if (totalSal >= 30000){
+					tax = (10 * totalSal) / 100;
+				} else if (totalSal >= 20000) {
+					tax = (5 * totalSal) / 100;
+				}
+			} else {
+				if (totalSal >= 50000) {
+					tax = (10 * totalSal) / 100;
+				} else if (totalSal >= 30000) {
+					tax = (5 * totalSal) / 100;
+				}
+			}
+			console.log("totalSal is " + totalSal);
+			console.log("total tax  is " + tax);
+		</script>
+	</body>
+</html>

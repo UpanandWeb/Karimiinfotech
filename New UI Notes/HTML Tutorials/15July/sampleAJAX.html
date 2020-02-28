@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="../jquery.js"></script>
+	</head>
+	<body>
+		<input type="button" value="GET Student Data" onclick="getSudentData()">
+		<div class="container"></div>
+		<script type="text/javascript">
+			function getSudentData() {
+				var dataUrl = "http://localhost:8082/15July/data/studentData.json";
+				$.ajax({
+					url: dataUrl,
+					dataType: 'JSON',
+					method: 'GET',
+					success: function(response){
+						console.log("successfuly communication happend");
+						console.log(response);
+						displayData(response.details);
+					},
+					error: function(){
+						console.log("error while communication");
+					}
+				});
+			}
+			function displayData(data) {
+				var ulTag = $("<ul></ul>");
+				for (var key in data) {
+					var liTag = $("<li></li>").html(key  +" is " + data[key]);
+					ulTag.append(liTag);
+				}
+				$(".container").append(ulTag);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>
+			Demonstrating Web workers
+		</title>
+		<style type="text/css">
+			.dateContainer {
+				text-align: right;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="dateContainer">
+			Date: <span id="cDate"></span>
+		</div>
+		<h3>Demonstrating  multitasking using Web workers</h3>
+		<div class="mainContainer"></div>
+		<script type="text/javascript">
+			var myworker = new Worker("http://localhost:8082/26July/dateWorker.js");
+			var temp = 1;
+			myworker.onmessage = function(event){
+				temp++;
+				showDate(event.data);
+				if (temp == 5) {
+					myworker.terminate();		
+				}
+			}
+			
+			var count = 0;
+			function showBlocks() {
+				count++;
+				var div = document.createElement("div");
+				div.innerHTML = "Message " + count;
+				document.querySelector(".mainContainer").appendChild(div);
+			}
+			setInterval(function(){
+				showBlocks();
+			}, 1500);
+
+
+			var showDate = function(date) {
+				document.querySelector("#cDate").innerHTML = date;
+			}
+			
+		</script>
+	</body>
+</html>

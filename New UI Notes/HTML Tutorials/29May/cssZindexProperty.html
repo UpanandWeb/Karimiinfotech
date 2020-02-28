@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating CSS z-index property
+		</title>
+		<style type="text/css">
+			.item {
+				border: 2px solid;
+				padding: 20px;
+				text-align: center;
+				width: 120px;
+				height: 120px;
+			}
+			.item1 {
+				background: green;
+				position: relative;
+				z-index: 300;
+			}
+			.item2 {
+				background: blue;
+				position: absolute;
+				left: 40px;
+				top: 60px;
+				z-index: 4;
+			}
+			.item3 {
+				background: yellow;
+				z-index: 301;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="item item1">BOX 1</div>
+		<div class="item item2">BOX 2</div>
+		<div class="item item3">BOX 2</div>
+	</body>
+</html>

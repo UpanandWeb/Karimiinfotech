@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Jquery Selectors and methods
+		</title>
+		<script type="text/javascript" src="../jquery.js"></script>
+		<style type="text/css">
+			li {
+				list-style: none;
+				border: 1px solid;
+				margin: 5px;
+				padding: 5px;
+			}
+			.highlight {
+				background: green;
+			}
+			.parent {
+				border: 1px solid;
+				width: 400px;
+				height: 500px;
+				background: green;			
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" value="get value" onclick="showValue()">
+		<div class="parent">
+			
+		</div>
+		<input type="text" value="highlight">
+		<ul>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+		</ul>
+		<input type="button" onclick="highlight()" value="apply">
+		<script type="text/javascript">
+			function highlight() {
+				/*// $("li:gt(3)").addClass("highlight");
+				$("li:first-child").addClass("highlight");
+				// $("input[type=text]").css("color", 'blue');
+				$("div[name=sample]") */
+				// var span = $("<span></span>").css("font-size", "20px").css("border", "2px solid").html("hello all");
+				var span = $("<span></span>").css({"font-size": '30px', "color": 'green', background: 'blue'}).html("hello all") ;
+				console.log(span);
+				$(".parent").after(span);
+				$(".parent").data("umsg1", "secretkey one")
+				$(".parent").data("umsg2", "secretkey two")
+
+			}
+			function showValue() {
+				alert($(".parent").data("umsg1"))				
+				alert($(".parent").data("umsg2"))				
+			}
+		</script>
+	</body>
+</html>

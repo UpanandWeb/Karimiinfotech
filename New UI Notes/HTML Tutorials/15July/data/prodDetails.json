@@ -1,0 +1,22 @@
+{
+	"prodDetails": [
+		{
+			"name": "Laptop",
+			"price": "$380",
+			"manu": "<b>Samsung</b>",
+			"rating": "3/5"
+		},
+		{
+			"name": "Laptop",
+			"price": "$330",
+			"manu": "Samsung",
+			"rating": "3/5"
+		},
+		{
+			"name": "Laptop",
+			"price": "$360",
+			"manu": "Samsung",
+			"rating": "3/5"
+		}
+	]
+}

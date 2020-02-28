@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<title>
+			Demonstrating HTML Tables
+		</title>
+		<style type="text/css">
+			table, td, th {
+				border: 1px solid;
+			}
+			.tableContainer {
+				border: 1px solid;
+				width: 500px;
+				height: 250px;
+			}
+			li{
+				list-style: none;
+				float: left;
+				width: 80px;
+				border: 1px solid;
+				margin: 5px;
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>Student Details.</div>
+		<table cellspacing="2" cellpadding="2">
+			<thead>
+				<tr>
+					<th>Sno.</th>
+					<th>Student Id</th>
+					<th>Name</th>
+					<th>Prmnt Location</th>
+					<th>Temp Location</th>
+					<th>Percentage</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>S_001</td>
+					<td>Raj</td>
+					<td>Hyderabad</td>
+					<td>Delhi</td>
+					<td>98%</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>S_003</td>
+					<td>Teena</td>
+					<td>Delhi</td>
+					<td>Vizag</td>
+					<td>91%</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>S_013</td>
+					<td>Krish</td>
+					<td>Mumbai</td>
+					<td>Pune</td>
+					<td>91%</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>S_013</td>
+					<td>Krish</td>
+					<td colspan="2">Hyderabad</td>
+					
+					<td>91%</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>S_013</td>
+					<td>Krish</td>
+					<td rowspan="2">Mumbai</td>
+					<td>Chennai</td>
+					<td>91%</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>S_013</td>
+					<td>Suresh</td>					
+					<td>Hyderabad</td>
+					<td>91%</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="tableContainer">
+			<ul class="row">
+				<li>Sno</li>
+				<li>Name</li>
+				<li>Gender</li>
+				<li>Loation</li>
+				<li>Percentage</li>
+			</ul>
+			<ul class="row">
+				<li>1</li>
+				<li>|Raj</li>
+				<li>Male</li>
+				<li>Hyd</li>
+				<li>20%</li>
+			</ul>
+			<ul class="row">
+				<li>1</li>
+				<li>|Raj</li>
+				<li>Male</li>
+				<li>Hyd</li>
+				<li>20%</li>
+			</ul>
+			<ul class="row">
+				<li>1</li>
+				<li>|Raj</li>
+				<li>Male</li>
+				<li>Hyd</li>
+				<li>20%</li>
+			</ul>
+			<ul class="row">
+				<li>1</li>
+				<li>|Raj</li>
+				<li>Male</li>
+				<li>Hyd</li>
+				<li>20%</li>
+			</ul>
+			<ul class="row">
+				<li>1</li>
+				<li>|Raj</li>
+				<li>Male</li>
+				<li>Hyd</li>
+				<li>20%</li>
+			</ul>
+		</div>
+	</body>
+</html>

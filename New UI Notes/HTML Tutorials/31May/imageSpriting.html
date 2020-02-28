@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>
+			Demonstrating Image spriting
+		</title>
+		<style type="text/css">
+			.title {
+				text-align: center;
+				text-decoration: underline;
+				color: green;
+				font-size: 15px;
+			}
+			.empDetails {
+				list-style: none;
+				border: 1px solid;
+				padding: 10px;
+				margin: 10px;
+				height: 150px;
+			}
+			.empImageBlock {
+				border: 1px solid;
+				height: 80px;
+				width: 90px;
+				background-image: url("images/spriteImg.png");
+			}
+			.emp2 {
+				background-position: 100px -6px;
+			}
+			.emp3 {
+				background-position: -12px 88px;
+			}
+			.emp4 {
+				background-position: 190px 183px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			Employee Details
+		</div>
+		<ul>
+			<li class="empDetails">
+				<div class="empImageBlock"></div>
+				<div>Name: Raj</div>
+				<div>Age: 25</div>
+				<div>Designation: IT Engnr</div>
+			</li>
+			<li class="empDetails ">
+				<div class="empImageBlock emp2"></div>
+				<div>Name: Suresh</div>
+				<div>Age: 40</div>
+				<div>Designation: Tech. Manager</div>
+			</li>
+			<li class="empDetails">
+				<div class="empImageBlock emp3"></div>
+				<div>Name: Teena</div>
+				<div>Age: 25</div>
+				<div>Designation: HR</div>
+			</li>
+			<li class="empDetails">
+				<div class="empImageBlock emp4"></div>
+				<div>Name: Krish	</div>
+				<div>Age: 25</div>
+				<div>Designation: Softwr engnr.</div>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>
+			Demonstrating Event Handling
+		</title>
+		<style type="text/css">
+			.rblock {
+				border: 2px solid;
+				width: 200px;
+				position: absolute;
+				bottom: 140px;
+			}
+			span {
+				font-size: 20px;
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="rblock"></div>
+		<input type="button" value="Get Result" id="userBtn">
+		
+		<input type="button" value="TEST">
+		<span  onclick="clearResult()">X</span>
+		<script type="text/javascript">
+			
+		
+		
+			document.querySelector("#userBtn").addEventListener("click", function(){
+				var p1 = 30;
+				var p2 = 40;
+				var result = p1 + p2;
+				//document.write("The sum is " + result);
+				document.querySelector('#rblock').innerText = "The sum is " + result;
+			});
+
+			function clearResult() {
+				document.querySelector("#rblock").innerText = '';
+			}
+
+		</script>
+	</body>
+</html>

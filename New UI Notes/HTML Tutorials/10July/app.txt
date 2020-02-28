@@ -1,0 +1,24 @@
+var count = 0;
+
+function getTaxInfo() {
+	taxUtilData.getTaxValue = function ()	{
+		console.log("test");
+	}
+	count++;
+	document.querySelector("#countVal").innerText = count;
+	var empDetails = {};
+
+	empDetails.name = document.querySelector("#empName").value;
+	empDetails.bsal = document.querySelector("#empBSal").value;
+	empDetails.bsal = parseInt(empDetails.bsal);
+
+	var taxValue = taxUtilData.getTaxValue(empDetails.bsal);
+	var pfvalue = taxUtilData.getPfValue(empDetails.bsal);
+	alert("pfvalue" + pfvalue)
+	document.querySelector("#taxVal").innerText = taxValue;
+	console.log("name is");
+	console.log(taxUtilData.name);
+
+}
+
+

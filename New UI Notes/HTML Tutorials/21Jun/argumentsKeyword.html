@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Arguments Keyword
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function showValues() {
+				console.log("frm show values");
+				console.log(arguments);
+			}
+			function addValues() {
+				console.log(arguments)
+				var sum = 0;
+				for (var i = 0; i < arguments.length; i++) {
+					sum += arguments[i];
+				}
+				console.log("Sum is " + sum);
+			}
+			addValues(20, 30, 44, 33, 22, 44, 555);
+			showValues(20, "india", true);
+		</script>
+	</body>
+</html>

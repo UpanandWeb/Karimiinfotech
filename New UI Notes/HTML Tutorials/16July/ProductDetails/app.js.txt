@@ -1,0 +1,42 @@
+var prodDetails = [];
+
+function showProdDetails(pDetails) {
+	
+	$(".container").loadTemplate($("#prodTmplt"), pDetails, {append:true});
+}	
+
+function getProdData() {
+	$(".maskBlock").show();
+	$(".loadingBlock").show();
+	
+	$.ajax({
+		url: "http://localhost:8082/get/proddetails/data",
+		method: 'GET',
+		dataType: 'JSON',
+
+		success: function(res) {
+			$(".maskBlock").hide();
+			$(".loadingBlock").hide();
+			console.log("success");
+			console.log(res);
+			prodDetails = res.prodDetails;
+			loadData();
+		}, 
+		error: function(err) {
+			console.log("err");
+			showErr();
+		}
+	});	
+}
+
+function showErr() {
+	$(".errorMsg").show();
+	$(".loadingBlock").hide();
+}
+
+function loadData(){
+	$(".container").innerHTML = '';
+	for (var i = 0; i < prodDetails.length; i++) {
+		showProdDetails(prodDetails[i]);
+	}
+}

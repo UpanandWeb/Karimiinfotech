@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating setTimeout and Interval Methods
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log("About to start");
+			var count = 0;
+			var myIntrvl = setInterval(function(){
+				count++;
+				console.log("Hello all " +count);
+				console.log("Very good morning");
+				if (count == 4) {
+					clearInterval(myIntrvl);
+				}
+			}, 3000);
+		</script>
+	</body>
+</html>

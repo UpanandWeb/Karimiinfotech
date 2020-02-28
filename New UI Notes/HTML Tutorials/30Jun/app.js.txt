@@ -1,0 +1,35 @@
+function readUserInfo() {
+	var userData = {};
+	userData.name = document.querySelector("#userName").value;
+	userData.uPwd = document.querySelector("#upwd").value;
+	userData.uage = document.querySelector("#uage").value;
+	userData.aboutu = document.querySelector("#aboutu").value;
+	var drpdwn = document.querySelector("#ucountry");
+	var index = drpdwn.selectedIndex;
+	userData.country = drpdwn.options[index].value;
+	console.log(userData);
+	if (userData.name == '') {
+		document.querySelector('#unameErr').style.display = 'block';
+	} else {
+		document.querySelector('#unameErr').style.display = 'none';
+	}
+	if (userData.uage > 18) {
+		document.querySelector('#uAgeErr').style.display = 'block';	
+	}
+}
+
+function validateData() {
+	var uname = document.querySelector("#userName").value;
+	if (uname == ''){
+		document.querySelector('#unameErr').style.display = 'block';
+	}
+}
+
+function showPWD(){
+	console.log(document.querySelector("#shwPwd").checked );
+	if (document.querySelector("#shwPwd").checked) {
+		document.querySelector("#upwd").setAttribute("type", "text");
+	} else {
+		document.querySelector("#upwd").setAttribute("type", "password");
+	}
+}

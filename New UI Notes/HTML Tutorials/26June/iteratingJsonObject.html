@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Json object access and iteration
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var details = ["raj", 34, 'Delhi'];
+			var data = {
+				name: "PRasad",
+				"age": 50,
+				'gender': 'Male'
+			}
+			var count = 0;
+			for (var temp in data){
+				
+					console.log(temp);
+					console.log(data[temp]);	
+					
+			}
+			console.log(data)
+		</script>
+	</body>
+</html>

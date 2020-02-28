@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating data method
+		</title>
+		<script type="text/javascript" src="../jquery.js"></script>
+		<style type="text/css">
+			li	{
+				list-style: none;
+				border: 1px solid;
+				margin: 5px;
+				padding: 5px;
+			}
+			li:hover {
+				background: yellow;
+				cursor: pointer;
+			}
+			.highlight {
+				color: white;
+				background:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1. mens Items</li>
+			<li>2. womens Items</li>
+			<li>3. kids Items</li>
+			<li>4. electronics Items</li>
+			<li>5. household Items</li>
+		</ul>
+		<script type="text/javascript">
+			$("li").click(function(event){
+				/*if ($(event.target).data('uSelected') == 'yes') {
+					$(event.target).removeClass('highlight');
+					$(event.target).data("uSelected", 'no');
+				} else {
+					$(event.target).addClass('highlight');
+					$(event.target).data("uSelected", 'yes');
+				} */
+				$("li").removeClass("highlight");
+				$(event.target).addClass('highlight');
+
+			})
+		</script>
+	</body>
+</html>

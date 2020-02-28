@@ -1,0 +1,45 @@
+ul {
+	border: 1px solid;
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style: none;
+	border: 1px solid;
+	margin: 5px;
+	padding: 5px;
+}
+img {
+	width: 120px;
+	height: 120px;
+}
+
+.loadingBlock {
+	position: absolute;
+	left: 40%;
+	top: 40%;
+	display: none;
+	
+	z-index: 100;
+}
+
+.errorMsg {
+	text-align: center;
+	border: 1px solid;
+	width: 300px;
+	margin: 40px auto;
+	padding: 20px;
+	color: red;
+	display: none;
+}
+
+.maskBlock {
+	position: absolute;
+	background: red;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+	display: none;
+}

@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>
+			Demonstrating Passing Params to Function
+		</title>
+	</head>
+	<body>
+		<div>Passing Params to a function</div>
+		<script type="text/javascript">
+			
+			function getData() {
+				var firstVal, secondVal;
+				firstVal = prompt("Enter first value");
+				secondVal = prompt("enter second val");
+				firstVal = parseInt(firstVal);
+				secondVal = parseInt(secondVal);
+				doSum(firstVal, secondVal);
+			}
+
+			function doSum(firstVal, b, c) {
+				console.log(c);
+				var result = firstVal + b;
+				console.log("The sum " + result);
+			}
+			getData();
+		</script>
+	</body>
+</html>

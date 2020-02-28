@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating DHTML concepts
+		</title>
+		<style type="text/css">
+			.sample {
+				font-size: 20px;
+				background: blue;
+				border: 2px solid;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Demonstrating DHTML concepts</h3>
+		<div id="container"></div>
+		<script type="text/javascript">
+			var a = 50;
+			var b = 780;
+			var c = a + b;
+			var spanElmnt = document.createElement('span');
+			spanElmnt.innerText = "The sum is " + c;
+			/*spanElmnt.style.background = 'green';
+			spanElmnt.style.border = '2px solid';*/
+			spanElmnt.setAttribute("class", "sample");
+			spanElmnt.setAttribute("id", "test");
+			document.getElementById('container').appendChild(spanElmnt);
+			console.log(spanElmnt);
+		</script>
+	</body>
+</html>

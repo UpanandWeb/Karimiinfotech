@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>
+			Adding Product Details Dynamically.
+		</title>
+		<script type="text/javascript" src="../../jquery.js"></script>
+		<script type="text/javascript" src="lib/jquery.loadTemplate-1.4.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="app.css">
+		
+	</head>
+	<body>
+		<div class="maskBlock">  </div>
+		Page to display product details...
+		<div class="errorMsg">
+			Error while communicating with server.
+		</div>
+		<div class="loadingBlock">
+			<img src="http://menarosa.org/wp-content/uploads/2018/12/pending-loop.gif">
+		</div>
+		<input type="button" value="Load Prod Details" onclick="getProdData();">
+		<ul class="container">			
+		</ul>
+		<script type="text/javascript" src="app.js"></script>
+		<script id="prodTmplt">
+			<li class="pItem">
+				<img data-src="image">
+				<div>
+					Product Name: 
+					<span data-content="name"></span>
+				</div>
+				<div>
+					Product Price: <span data-content="price"></span>
+				</div>
+				<div>
+					Manufacturer: 
+					<b><span data-content="manu"></span></b>
+				</div>
+				<div>
+					Rating: <span data-content="rating"></span>
+				</div>
+			</li>
+		</script>
+	</body>
+</html>

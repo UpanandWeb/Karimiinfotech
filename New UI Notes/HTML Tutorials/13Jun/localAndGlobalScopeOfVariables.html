@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Local and Global Variables
+		</title>
+		<script type="text/javascript" src="abc.js"></script>
+	</head>
+	<body>
+		<div>
+			Demonstrating Local and Global Variables
+		</div>
+		<script type="text/javascript">
+			var a = 10;
+			var b = 20; // global variables can be accessable anywhere with in the application
+			function showDetails() {
+				var z = 44; // local variable can be accessable only within the function
+				console.log(a);
+				a = 333;
+				console.log(b);
+				console.log(z);
+			}
+			console.log(z); // z cannot be acccessable
+			showDetails();
+			console.log("value of a is " + a);
+		</script>
+
+	</body>
+</html>

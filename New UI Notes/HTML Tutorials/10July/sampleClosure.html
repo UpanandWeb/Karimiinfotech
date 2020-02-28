@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Closures
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 10;
+			console.log(a);
+			(function(){
+				console.log("closure been called")
+				var  b = 30;
+				var a = 70;
+				console.log("ba valu is " + b);
+				console.log("a value is " + a);
+				function test(){
+					console.log("hello");
+				}
+				test();
+				var data = {
+					...
+				}
+			})();
+			
+			test();
+			console.log("ba valu is " + b);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+var taxUtilData = (function(){
+
+	var count = 1;
+	function getPf(bsal) {
+		var pf = (14.3 * bsal) / 100;
+		return pf;
+	}
+
+	function getHra(bsal) {
+		var hra = (25 * bsal) / 100;
+		return hra;
+	}
+
+	function getTotalSal(bsal) {
+		count++;
+		var pf = getPf(bsal);
+		var hra = getHra(bsal);
+		var total = bsal + pf + hra;
+		return total;
+	}
+
+	var userData = {
+		name: "Raj",
+		getTaxValue: function(bsal){
+			count++;
+			var totalSal = getTotalSal(bsal);
+			var taxPercent = 0;
+			if (totalSal > 500000) {
+				taxPercent = 10;
+			} else {
+				taxPercent = 5;
+			}
+			var totalTaxNeedToBePaid =  (totalSal * taxPercent) / 100;
+			return totalTaxNeedToBePaid;
+		},
+		getPfValue: function(bal){
+			var pfvalue = getPf(bal);
+			return pfvalue;
+		}
+	}
+
+	return userData;
+})();

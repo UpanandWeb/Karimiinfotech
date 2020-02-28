@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating CSS3 Transformations
+		</title>
+		<style type="text/css">
+			.content {
+				border: 2px solid;
+				background: green;
+				width: 500px;
+				height: 180px;
+				margin: 50px auto;
+				text-align: center;
+				background-image: url(images/one.png);
+   /*				transform: rotate(190deg); */
+			}
+			.content2 {
+				border: 2px solid;
+				background: green;
+				width: 300px;
+				height: 80px;
+				border-radius: 50%;
+				margin: 50px auto;
+				text-align: center;
+				background-image: url(images/two.png);
+   /*				transform: rotate(190deg); */
+   				position: absolute;
+   				top: 20%;
+   				left: 35%;
+   			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			HELLO
+		</div>
+		<div class="content2">
+			HELLO
+		</div>
+		<script type="text/javascript">
+			/*var msg = "CONTENTa;slkfja;slfkj abcdedsfasf comfortable";
+			var maxChrsinSingleLine = 42;
+			var tempMsg = '';
+			for (var i = 0; i< msg.length; i++) {
+				if (i == maxChrsinSingleLine) {
+					tempMsg += ' -'
+				} 
+				tempMsg += msg[i];
+			}
+			document.querySelector(".content").innerHTML = tempMsg; */
+			
+			function applyAnimations(degValue, container) {
+				document.querySelector(container).style.transform = "rotateY(" + degValue + "deg)";
+				
+				
+			}
+			var degValue1 = 230;
+			var degValue2 = 90;
+			setInterval(function(){
+				
+				degValue1++;
+				if (degValue1 == 360) {
+					degValue1 = 1;
+				}
+				applyAnimations(degValue1, '.content');
+			}, 50);
+			setInterval(function(){
+				
+				degValue2++;
+				if (degValue2 == 360) {
+					degValue2 = 1;
+				}
+				applyAnimations(degValue2, '.content2');
+			}, 50);
+		</script>
+	</body>
+</html>

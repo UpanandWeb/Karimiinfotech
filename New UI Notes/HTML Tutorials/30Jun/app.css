@@ -1,0 +1,38 @@
+.container {
+	border: 1px solid;
+	width: 600px;
+	margin: 10px auto;
+	padding: 20px;
+	background: #ccc;
+}
+li {
+	list-style: none;
+	border: 1px solid;
+	background: #fff;
+	margin: 10px;
+	padding: 10px;
+}
+.title {
+	text-align: center;
+	text-decoration: underline;
+	color: green;
+	margin: 20px;
+
+}
+
+.errmsg {
+	color: red;
+	font-size: 12px;
+	padding-left: 60px;
+}
+#unameErr {
+	display: none;
+}
+
+#uAgeErr {
+	display: none;
+}
+
+
+
+

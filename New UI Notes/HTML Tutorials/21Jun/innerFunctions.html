@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Demonstrating Inner Functions
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function readData() {
+				var ename = prompt("enter uer name");
+				var ebasic = prompt("Enter basic sal");
+				ebasic = parseInt(ebasic);
+				var pf = getPf();
+				var hra = getHra();
+				var totalSal = pf + hra + ebasic;
+				console.log("Total sal " + totalSal);
+				function getPf() {
+					var pf = (ebasic * 14 )/100;
+					return pf;
+				}
+
+				function getHra() {
+					var hra = (ebasic * 25 )/100;
+					return hra;
+				}
+			}
+
+			
+
+			
+			readData();
+		</script>
+	</body>
+</html>
