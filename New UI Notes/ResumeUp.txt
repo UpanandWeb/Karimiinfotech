@@ -1,0 +1,88 @@
+http://www.digixwebindia.xyz/
+
+Ace Indus Tech-Sol India Pvt Ltd.
+
+MySQL,  https://sites.google.com/view/upanand-kolhe/home
+
+
+https://sites.google.com/s/1hWa-968ZmCK8vhnLF7sXWWz-roAOyTUU/p/1SEgbme7ahME-j1_pffLkkPtS135J4Hbk/edit
+
+
+
+Title		: 	Indus Group Incorporated Portal 
+Client		: 	Mr. Mr. Ramanulla Ravi Kumar , Washington DC, USA.
+Period		:           Nov 2019 to Present
+Team size          :           5
+Technology used	: 	HTML5, CSS3, Bootstrap, JQuery, JavaScript, SQL Server
+Role		:	Web Designer
+Description        :	The overview of the Project is to  develop a Desktop application using this application organization is looking forward to provide a one stop web Portal to users which give all the required details. Indus Group is a Global software development, Web design and development cum IT staffing services organization attuned to provide hassle-free quality solutions to our clients worldwide. Project handling is another important aspect as there are a defined number of steps that has to be executed in a flawless manner, in order to derive expected outcome from a particular IT Project. IT staffing solutions is another area where Indus Group has got a good amount of expertise. This portal is scalable to Mobile devices as it was designed using Bootstrap. 
+
+Responsibilities	:
+o	Design and build applications for Mobile and Web platform.
+o	Integrate front-end applications with the application business layer.
+o	Collaborate with a team to define, design, and ship new features.
+o	Work on a variety of products, including websites, mobile applications, and Social Media Posts.
+o	Developing Responsive web design with cross-browser and cross-platform compatible solutions.
+Title		: 	Muslim English Language Institute Portal
+Client		: 	Mr. Mohammad Nematullah Ruhan , Kabul, Afghanistan
+Period		:           Apr 2019 to 30 Sept 2019
+Team size          :           6
+Technology used	: 	HTML5, CSS3, Bootstrap, JQuery, JavaScript, SQL Server
+Role		:	Web Designer
+Description        :	The overview of the Project is to  develop a Desktop application using this application organization is looking forward to provide a one stop web Portal to users which give all the required details In the year 2002, Muslim English Language Institute equipped with a professionally compiled English language program was founded in Kabul and launched its operations to spread, encourage, and develop skill learning along with teaching the language of the world and technology. It was officially registered with the Ministry of Education of Afghanistan in 2002. This portal is scalable to Mobile devices as it was designed using Bootstrap. 
+
+Responsibilities	:
+o	Design and build applications for Mobile and Web platform.
+o	Integrate front-end applications with the application business layer.
+o	Collaborate with a team to define, design, and ship new features.
+o	Work on a variety of products, including websites, mobile applications, and Social Media Posts.
+o	Developing Responsive web design with cross-browser and cross-platform compatible solutions.
+o	Ensure design consistency with the development standards and guidelines.
+o	Testing the website to monitoring performance and  maintaining links.
+o	Communicate project status / progress / reports to product owners and stakeholders
+
+
+
+Title : Future Home Engineering Consultants Portal
+Period                :   Nov 2017 to Apr 2018
+Team size          : 3
+Technology used : HTML 5, CSS3, Bootstrap, J Query, JavaScript
+Role                    : Web Designer
+Description       : This web application is Company’s website designed to provide users access to different areas and get required information about Future Home Engineering Consultants. Future Home is one of the leading providers of total engineering solutions, delivering world class quality projects, that provides Integrated Design, Engineering and Construction Management relating to disciplines of Civil Construction through our experienced staffs’ innovations and passions. Future Home Engineering Consultants is a reputed and successful firm in its field contributing to several landmark projects Kuwait, in both, private and public sectors. This portal is scalable to Mobile devices as it was designed using Bootstrap. 
+Responsibilities :
+Design and build applications for Mobile and Web platform.
+Integrate front-end applications with the application business layer.
+Collaborate with a team to define, design, and ship new features.
+Ensure design consistency with the development standards and guidelines.
+Remove any “dead” links immediately and respond to issues with site functionality.
+Communicate project status / progress / reports to product owners and stakeholders.
+
+
+
+Title : Prilor Technology Pvt Ltd Portal
+Client                  :  Mr. L. J. RAJ SOLAY - Prilor Technology Pvt Ltd. Hyderabad INDIA
+Period                 :   June 2017 to Aug 2017
+Team size          :  6
+Technology used : HTML 5, CSS3, Bootstrap, J Query, JavaScript, SQL Server
+Role                    : Web Designer
+Description       : Using this application organization is looking forward to provide a one stop web Portal to users which give all the required details about Company. The portal will give information about Company’s Strategy, Goals. It provides users to enter inquiry, visit different links like Career, Contact us etc. This portal is scalable to Mobile devices as it was designed using Bootstrap. The details are stored in SQL server backend.
+Responsibilities :
+Worked as Web Designer from scratch in project across all phases
+Involved in designing responsive UI using Bootstrap, HTML5, CSS3, and JQuery.
+Contribute in all phases of the designing with a focus on Adobe Photoshop, Dreamweaver, InDesign CS6 and other Designing Tools.
+Working with other web specialists including web developers and graphic designers.
+Title : Lorin Hr Web Portal
+Client                 :   Mr. L. J. RAJ SOLAY - Lorin Hr Placement Consultants Hyderabad INDIA
+Period                :  Apr 2016 to June 2017
+Team size          : 6
+Technology used : HTML5, CSS3, Bootstrap, JQuery, JavaScript, SQL Server
+Role                    : Web Designer
+Description       : This web application is Company’s website designed to provide users access to different areas and get required information about consultancy. Using this job seekers can search current openings and apply for suitable requirements. It allows user to upload resume and submit inquiry through various links. all these are connected to centralized server, monitor all site using web application. 
+Responsibilities :
+Plan and implement new designs as well as Optimize existing user interface designs.
+Designing responsive UI using Bootstrap, HTML 5, CSS3, and J Query.
+Upgrades site by updating content and graphics; monitoring performance and  maintaining links.
+Testing the website to monitoring performance and  maintaining links.
+
+
+

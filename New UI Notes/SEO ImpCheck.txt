@@ -1,0 +1,106 @@
+
+https://learndigital.withgoogle.com/digitalgarage
+
+https://www.aadseducation.com/project-management/pmp-certification-training
+
+
+
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+</body>
+</html>
+
+
+ #3d3e3e->  #0929d4e6
+file:///C:/Users/User/Desktop/AADS1/microsoft-dynamics-crm-training.html
+
+
+
+https://gtmetrix.com/
+
+https://www.smartmenus.org/download/
+
+https://tools.pingdom.com/#59c5764f5d000000
+
+https://www.aadseducation.com/project-management/pmp-certification-training
+
+https://www.greycampus.com/pmp-training-instructor-led#course_overview
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px)
+.col-md-offset-1 {
+    margin-left: 8.33333333%;
+}
+@media (min-width: 992px)
+.col-md-11 {
+    width: 91.66666667%;
+}
+
+@media (min-width: 992px)
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+
+
+
+
+
+.PMP_bannrbg_box {
+    background: #C9D3D8;
+    width: 100%;
+    height: 470px;
+}
+
+.mt_10 {
+    margin-top: 10px;
+}
+@media (min-width: 992px)
+.col-md-12 {
+    width: 100%;
+}
+@media (min-width: 992px)
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+
+https://sites.google.com/view/upanand-kolhe/home
+
+
+
+T. Premalatha	9666994704	10th June 1994
+R. Sireesha	9550114241	28th Dec 1994
+V. Priyank	                9515178935	 20th Aug 1990
+D. Sandhya	9100529455	27th Oct 1992
+G. Shankar	9010788028	19th April 1992
+Upanand Kohle	9133660113	
+T. Anjali Goud	9949154237	30th June 1996

@@ -1,0 +1,604 @@
+ application is a collection of programs
+ 
+ we have 3 types of applications
+ 
+ 1)	desktop
+ 
+ 2)	web
+ 
+ 3)	mobile
+ 
+ a web application is a collection client programs and server programs.
+ 
+ client programs are used to develop user interface.
+ 
+ server programs are used to develop for data processing and storing in a web application.
+ 
+ client programs can be developed by 
+ 
+ 1)	HTML	5
+ 2)	CSS		3
+ 3)	JS			6
+ 
+ server programs can be developed by
+ 
+ 1)	JAVA
+ 2)	.Net
+ 3)	python
+ 4)	nodejs
+ 5)	php
+ 
+ A full stack programmer should have knowledge on client and server programming technologies.
+ 
+ install the following softwares
+ 
+ 1)	Firefox browser 
+ 
+ 2)	visual studio code editor 
+		
+		https://code.visualstudio.com/download
+ 
+ HTML : -
+ ----------
+	html means hyper text markup language.
+	
+	html logic should be in .html files. so that browser can understand.
+	
+	in html we have elements and attributes.
+	
+	Every html element contains starting and ending tags and content.
+	
+	w3c ( world wide web consortium) provides new html standards ( elements and attributes ) .
+	
+	All Browsers should implements these standards.
+	
+HTML file structure
+------------------------------
+
+	head section contains page information.
+	
+	body section contains display content for user.
+	
+	
+body section tags or elements : -
+------------------------------------------------
+
+	table : -
+	---------
+		to display the data to the user in beautiful way we use tables.
+		
+		to work with tables we use table 
+		
+						tr th and td tags.
+		
+<html>
+    <body>
+        <table 		border="1">
+            <tr>
+                <th>Id</th><th>Name</th>
+            </tr>
+            <tr>
+                <td>1</td><td>s1</td>
+            </tr>
+            <tr>
+                <td>2</td><td>s2</td>
+            </tr>
+        </table>
+    </body>
+</html>
+	
+ Lists : -
+ --------
+	lists are used display collection of values.
+	
+	1)		ordered lists
+	
+	2)		unordered lists 
+	
+		<ol>
+            <li>hdfc</li>
+            <li>icici</li>
+            <li>axis</li>
+        </ol>
+        <ul>
+            <li>hdfc</li>
+            <li>icici</li>
+            <li>axis</li>
+        </ul>
+ 
+ Headings : -
+ -----------------
+		to highlight the text in a webpage we use headings.
+		
+		we have  h1 to h6 for this purpose.
+		
+paragraph : -
+------------------
+	to write multiple lines of text in a webpage we use paragraph.
+	
+	browser automatically formats paragraph content.
+	
+	sometimes we need to display data as it is ( same format);
+	
+	in that scenario we should pre tag.
+	
+anchor 
+-----------
+		to link one webpage with another we use anchor tags.
+		
+		collection of anchor tags are called as menu.
+		
+		https://code.visualstudio.com/download
+	
+Forms:-
+----------
+		forms are used to capture user input.
+		
+		User Input of many types can be configured.
+		
+		text input 
+		---------------
+				this field we create when we want enter any text input.
+				
+				for example alphabets or numbers or any special char
+				
+				<input 		type="text" >
+				
+				name attribute 
+				
+							it is used to identify user input in server program.
+							
+		radio : -
+				we create radio buttons when we want to select one value from list of values.
+				
+		checkbox:-
+				we create check boxes when we want to select multiple values from list of values.
+				
+		password: -
+				we create password fields when we want to hide information while we are typing.
+<html>
+    <body>
+        <form>
+        User Name <input    type="text"     name="username"> <br>
+        Password <input type="password" name="password"> <br>
+        Qualification <br>
+        <input type="radio" name="qual" value="btech"> B.Tech <br>
+        <input type="radio" name="qual" value="mca"> MCA<br>
+        <input type="radio" name="qual" value="mba"> MBA<br>
+        Courses <br>
+        <input type="checkbox" name="course" value="h5">HTML5 <br>
+        <input type="checkbox" name="course" value="c3">CSS3<br>
+        <input type="submit">
+        </form>
+    </body>
+</html>				
+				
+		file :-
+		-----
+			to accept a file as input from the use we use file input type.
+			
+			<input type="file" name="resume" >
+			
+			by default we can select only one file.
+			
+			to select multiple files use multiple attribute.
+			
+			<input 		type="file" 	name="pics"  	multiple>
+			
+		textarea : -
+		--------------
+				to accept more than 20 char as input from the user we use textarea.
+				
+				<textarea 	name="descr" 		cols="5" 	rows="5">
+				
+				rows  attribute defines no of visible lines for the user.
+				
+				cols 	attribute defines no of char per line.
+				
+		select : -
+		----------
+			to accept user input from the list of options ( more than 10)
+			
+			<select name="country">
+                <option>India</option>
+                <option>USA</option>
+                <option>UK</option>
+                <option>Pakistan</option>
+            </select> 
+			
+			option have value attribute. this attribute specifies the value is used by server program.
+			
+			to configure default option use selected attribute.
+			
+			to configure multi value selection we use multiple attribute
+			
+		submit and reset buttons
+		-----------------------------------------
+			to send the values from client program to server program we use submit buttons
+			
+			to rest the values provided by user we use reset button
+			
+			<input 		type="submit" 		value="Login">
+            <input 		type="reset" 		value="Cancel">
+			
+
+HTML new input types : -
+------------------------------------
+
+
+email: -
+---------
+
+		to accept user email as input we use email type in the html form.
+		
+		<input 			type="email" 		name="email">
+
+url : -
+-----
+		to accept user website address as a input use url.
+		
+		<input 		type="url"  	name="facebookId">
+
+tele : -
+------
+		to accept user phoneNo as input use tele.
+		
+		<input 			type="tele" 		name="phoneNo">
+
+number :- 
+
+		to accept as number data as input use number
+		
+		<input 			type="number" 		name="otp">
+
+
+range : -
+
+		to accept a particular range values we use range.
+		
+		<input 		type="range" 		name="price" 		min="10" 	max="20">
+
+date : -
+
+		to accept date as a input we use date.
+		
+		<input 		type="date" 		name="dob" >
+		
+		we can also have month week time types also.
+		
+		these are supported by chrome browser only.
+		
+		
+color
+		to accept a color as a input
+		
+		<input 		type="color"   name="userSelectedColor">
+
+			
+		Text
+
+		
+New input types
+Email
+Url
+tele
+
+NUMBER
+Range
+
+Date
+Time
+Month
+Week
+
+Color			
+				
+new attributes available in html 5
+-------------------------------------------------------
+ 				
+Autofocus:-
+		to set focus for a field when we open a form, we use autofocus.
+		
+		<input 		type="text" 		name="username" 	autofocus>
+
+		autofocus can be configured for input select and textarea
+
+Placeholder
+
+		to define help text for the user for the current field.
+		
+		<input 		type="text" 		placeholder="enter username">
+		
+		it is applicable text,password,email,url,number and textarea.
+		
+Step
+		it provides increment or decrement value configuration for number and range fields.
+		
+		<input 		type="number" 	name="price" 	step="50">
+
+
+Multiple
+
+Autocomplete
+		to configure, hiding user inputs by previous users we use autocomplete attribute.
+		
+		<input type="text"  name="username" autocomplete="off">
+				
+validation attributes
+----------------------------------
+				
+required
+		always enter the value
+		
+minlength
+		value should be atleast min no of char
+		
+maxlength
+		value should be less than max length of char
+
+pattern
+		value should follow the format
+		
+	
+	<input 		type="text" 		name="username" 	minlength="6" 	required 		maxlength="10"  >
+	
+pattern validation:-
+-----------------------------
+	by using this validation we can control the input characters for the current field.
+	
+	[a-z]		lowercase
+	[A-Z]		uppercase
+	[0-9]		numbers
+	
+	to work with complex patterns we use regular expressions.
+	
+Novalidate
+	to suppress html validations we use novalidate attribute. 
+	
+	this is the attribute of the form.
+	
+audio and video tags
+----------------------------------
+
+	to play audio and video files we can use audio and video tags.
+	
+	    <audio src=""></audio>
+        <video src="" ></video>
+	
+	we have autoplay attribute for audio and video tags.
+	
+	to display video controls like volume button start button we should use controls attribute.
+	
+head tags:-
+---------------
+	
+	title : - to display name of the web page for the user we use title.
+	
+	<html>
+		<head>
+			<title>home page</title>
+		</head>
+	</html>
+	
+	style : -
+	--------
+		to write css rules for the current we page we use style tag.
+		
+		we can write multiple style tags.
+		
+		 <style>
+            h1 {
+                color: white;
+            }
+        </style>
+        <style>
+            h1 {
+                background-color: red;
+            }
+        </style>
+	
+	link : -
+	-------
+		to load external css files for the current web page we use link tag.
+		
+		<link 		rel="stylesheet" 		href="style.css">
+	
+	script : -
+	---------
+		to write or load javascript code in the web pages we use script tag.
+		
+		<script 	type="text/javascript">        
+            alert("test");        
+        </script>
+
+        <script 	type="text/javascript" 		src="jquery.js">    
+        </script>
+		
+	
+    <noscript>
+			when javascript is disabled we want to display some meaningful information to user. for this purpose we use noscript tag.
+			
+	meta 
+		these tags are used to provide information for SEO tools.
+		
+		 keywords, author, name , character encoding etc.
+		 
+		 
+display content of the web page is divided into 4 areas.
+		
+
+    <header>
+			element represents a container for website logo and login information.
+			
+			A <header> element typically contains:
+
+				one or more heading elements (<h1> - <h6>)
+				logo or icon
+				
+			<html>
+				<head><title>content tags</title></head>
+				<body>
+					<header>
+						<h1>Gmail</h1>
+					</header>
+					<nav>
+					</nav>
+					<section>
+					</section>
+					<footer>						
+					</footer>
+				</body>
+			</html>
+
+    <nav>
+			tag defines a set of navigation links.
+				
+				<nav>
+				  <a 		href="/ui">ui</a> |
+				  <a 		href="/java">java</a> |
+				  <a 		href="/python">python</a>
+				</nav> 
+				
+    <section>	
+			tag defines different content sections in a webpage,
+			
+			 <section>
+				<h3>UI</h3>
+				<p>
+					UI means user interface. we should use html,css,js,bootstrap,angular8
+				</p>
+			</section>
+			
+	<footer>
+			element contains:
+				copyright information
+				contact information
+				sitemap
+				back to top links
+				
+				
+				
+   <article>
+		tag specifies independent,
+		<article> element:
+				
+				News story
+				Comment
+				Forum post
+				Blog post
+	
+		<article>
+		  <h1>Chrome1</h1>
+		  <p>Google Chrome is a free, open-source web browser developed by Google.</p>
+		</article>
+
+    details:-
+	
+			in web pages some times we need to display notes section.
+			
+			in this scenario we should use details tag.
+	
+		<details>
+		  <summary>Html 5 course details.</summary>
+		  <p> local storage.</p>
+		  <p>web workers.</p>
+		</details>
+		
+    
+	src provides the location of the image
+	
+	alt attribute provides alternate message when the image is not available.
+	
+	we have width and height attributes also.
+	
+	from html 5 on wards we use figure and figcaption tags for displaying images.
+	
+    <figure>
+				tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+				
+				 <figure>
+				  <img src="location" width="100" height="100">
+				</figure> 
+		figcaption
+	
+	progress bar 
+	--------------------
+		to create visual clues about server processing we use progress bar.
+		
+	<progress value="50" max="100">
+	</progress>
+	
+	
+		Formatting:-
+	
+		b				bold text
+		i				italic
+		mark			highlight
+		u				underline
+		strike		deleted text	<strike> is not supported in HTML5.
+		del			deleted text
+		ins			inserted data
+		sub			below the other characters.
+		sup			above the other characters.
+		big			larger text.		
+		small		small text.
+	
+	iframe
+		to display other website pages in our html page we use iframe tag.
+	
+	div,span
+		these two tags are used to act as container for other tags.
+		
+		difference between div and span  or inline or block elements?
+			span occupies content width only.
+			div occupies all the browser width. thats why div is called as block element.
+			
+			span is called as inline element.
+			
+			paragraph and headings also block elements.
+		
+		label 
+			to provide information about the fields in the form we use label tag.
+			
+			<label>username</label>
+		
+	
+		fieldset
+			to group fields as a single unit we use fieldset.
+			
+		legend
+			to provide information about fieldset we use legend.
+			
+			<form>
+				<fieldset>
+					<legend>Login</legend>
+					username <input type="text" name="username"> <br>
+					password <input type="password" name="password"> <br>
+				</fieldset>
+			</form>
+		
+	
+	
+		
+	
+	
+	
+	
+				
+				
+				
+				
+				
+				
+				
+				
+					
+		
+		
+ 
+ 
+ 
+ 
+ 
+ 
+ 
